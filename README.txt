@@ -1,6 +1,7 @@
 Welcome to Alex Rochaix’s Github account!
 
 PROJECT/Roman Numerals:
+	Roman Kata by Alex Rochaix [C++, 2017]
 	This project is entirely functional on the command line.
 
 valid commands: $<verbose form, shortcode>
