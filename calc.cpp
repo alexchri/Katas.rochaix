@@ -10,11 +10,14 @@
 using namespace std;
 
 string help_message() {
-    return "Welcome to Roman Numeral calculator!\nValid inputs include:\n\t$numeral for Roman Numeral to number\n\t$number for Number to Roman Numeral.\nEnter 'q' at any time to quit the program.\nEnter 'help' at any time to return to this message.\n\n";
+    return "\nWelcome to Roman Numeral calculator!\nValid inputs include:\n\t$numeral for Roman Numeral to number\n\t$number for Number to Roman Numeral.\nEnter 'q' at any time to quit the program.\nEnter 'help' at any time to return to this message.\n\n";
 }
 
 void calc(const string& input) {
     if(input == "help") {
-        printf("\n%s", help_message().c_str());
+        printf("%s", help_message().c_str());
+    }
+    else {
+        
     }
 }

@@ -4,16 +4,17 @@ PROJECT/Roman Numerals:
 	Roman Kata by Alex Rochaix [C++, 2017]
 	This project is entirely functional on the command line.
 
-valid commands: $<verbose form, shortcode>
-	$numeral, #	//takes Roman Numeral input, outputs Number value
-	$number, n	//takes Number input, outputs Roman Numeral value
-	$help, h	//provides instructions for use, and description
-	
+valid inputs:
+	$<numeral>	//takes Roman Numeral input, outputs Number value
+	$<number>	//takes Number input, outputs Roman Numeral value
+	$help		//provides instructions for use, and description
+	$q		//exit program	
+
 Make commands:
-	make release <flags>	//runs with flags and -O3 flag (make run essentially!)
+	make release 	//runs with -O3 flag (make run essentially!)
 	make -R -r	//builds -o files and .exe, treats all warnings as errors
-	make debug	//after make -R -r, runs with debug flag
-	make clean 	//removes object files (*.o) and executable 	
+	make clean 	//removes object files (*.o) and executable
+	make tests	//runs test(*).txt files 	
 
 Files included:
 	//driver files
