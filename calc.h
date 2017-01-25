@@ -9,6 +9,16 @@
 #ifndef calc_hpp
 #define calc_hpp
 
+#include <getopt.h>
+#include <iostream>
 #include <stdio.h>
 
-#endif /* calc_hpp */
+struct flags {
+    bool r = false;
+    bool n = false;
+    bool h = false;
+};
+void cmndline(flags& flag, int argc, char* argv[]); //process commandline
+void calc(const std::string& input, flags& flag); //process word input
+
+#endif /* calc_h */
