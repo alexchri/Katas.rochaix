@@ -14,7 +14,7 @@ Make commands:
 	make release 	//runs with -O3 flag (make run essentially!)
 	make -R -r	//builds -o files and .exe, treats all warnings as errors
 	make clean 	//removes object files (*.o) and executable
-	make tests	//runs test(*).txt files 	
+	make test	//redirects .txt input file and writes output to out.txt	
 
 Files included:
 	//driver files
@@ -22,8 +22,7 @@ Files included:
 		calc.cpp , calc.h	//functions file, header file
 
 	//test files		
-		test(rton).txt		//Roman Numeral to Number test file
-		test(ntor).txt		//Number to Roman Numeral test file
+		test.txt		//test input file
 
 	//Makefile
 		Makefile
@@ -31,4 +30,3 @@ Files included:
 Dependencies in makefile:
 	driver.o: driver.cpp calc.h
 	calc.o: calc.cpp calc.h
-

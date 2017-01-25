@@ -8,15 +8,22 @@
 #include "calc.h"
 using namespace std;
 
-int main(int argc, char * argv[]) {
+int main() {
     
     string input;
     
 /*********** USER INPUT ****************/
     while(input != "q") { //allow user to input multiple conversions
-        printf("enter: ");
         cin >> input;
-        calc(input); //produce correct flag output
+        if(input == "help") {
+            printf("%s", help_message().c_str());
+        }
+        if(input == "test") {
+            cin >> input;
+            test(input);
+            break; //exit program if test command is run
+        }
+        printf("%s", calc(input).c_str()); //produce correct flag output
     }
     
     return 0;

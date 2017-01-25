@@ -9,12 +9,17 @@
 #ifndef calc_hpp
 #define calc_hpp
 
-#include <getopt.h>
+#include <unistd.h>
 #include <iostream>
 #include <stdio.h>
+#include <fstream>
+#include <sstream>
+#include <string>
 
 std::string help_message(); //print out help message
 
-void calc(const std::string& input); //process word input
+std::string calc(const std::string& input); //process word input
+
+void test(const std::string& file);  //test *.txt file
 
 #endif /* calc_h */
