@@ -11,17 +11,19 @@ using namespace std;
 int main() {
     
     string input;
-    
+    help_message();
 /*********** USER INPUT ****************/
     while(input != "q") { //allow user to input multiple conversions
         cin >> input;
         if(input == "help") {
-            printf("%s", help_message().c_str());
+            help_message();
         }
-        if(input == "test") {
+        else if(input == "test") {
             cin >> input;
             test(input);
-            //break; //exit program if test command is run
+        }
+        else if(input == "q") {
+            //do nothing
         }
         else {
             cout << calc(input) << endl;

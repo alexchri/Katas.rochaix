@@ -9,14 +9,13 @@
 #include "calc.h"
 using namespace std;
 
-string help_message() {
-    return "\nWelcome to Roman Numeral calculator!\nValid inputs include:\n\t<numeral> for Roman Numeral to number\n\t<number> for Number to Roman Numeral.\n\t'q' at any time to quit the program.\n\t'test', then '*.txt' to run input from test file (*.txt)\n\t'help' at any time to return to this message.\n\n";
+void help_message() {
+    cout << "\nWelcome to Roman Numeral calculator!\nValid inputs include:\n\t<numeral> for Roman Numeral to number\n\t<number> for Number to Roman Numeral.\n\t'q' at any time to quit the program.\n\t'test', then '*.txt' to run input from test file (*.txt)\n\t'help' at any time to return to this message.\n\n";
 }
 
 string calc(const string& input) {
     string answer;
-    //temp for compile
-    answer = input;
+    
     return answer;
 }
 
@@ -51,6 +50,12 @@ void test(const string& file) {
         cin.rdbuf(a);
         cout.rdbuf(b);
         cout << endl;
+        if(passed) {
+            cout << "Pass!" << endl;
+        }
+        else {
+            cout << "See out.txt for errors" << endl << endl;
+        }
     }
     return;
 }

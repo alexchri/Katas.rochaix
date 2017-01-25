@@ -16,7 +16,7 @@
 #include <sstream>
 #include <string>
 
-std::string help_message(); //print out help message
+void help_message(); //print out help message
 
 std::string calc(const std::string& input); //process word input
 
