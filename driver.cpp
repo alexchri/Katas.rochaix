@@ -21,9 +21,11 @@ int main() {
         if(input == "test") {
             cin >> input;
             test(input);
-            break; //exit program if test command is run
+            //break; //exit program if test command is run
         }
-        printf("%s", calc(input).c_str()); //produce correct flag output
+        else {
+            cout << calc(input) << endl;
+        }
     }
     
     return 0;

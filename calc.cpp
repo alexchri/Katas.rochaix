@@ -25,11 +25,16 @@ void test(const string& file) {
     string value;
     int line = 1;
     bool passed = true;
-    if(file.find(".txt") != -1) {
+    streambuf *b = cout.rdbuf();
+    streambuf *a = cin.rdbuf();
+    if((int)file.find(".txt") != -1) {
+        //cast int because size_t vs signed
         ifstream input(file);
         cin.rdbuf(input.rdbuf()); //redirect std::cin to in.txt!
         ofstream output("out.txt");
-        cout.rdbuf(output.rdbuf());
+        cout.rdbuf(output.rdbuf()); //redirect std::cout to out.txt!
+        //freopen(file.c_str(), "r", stdin);
+        //freopen("out.txt", "w", stdout);
         while(cin >> in) {
             cin >> value;
             out = calc(in);
@@ -42,7 +47,9 @@ void test(const string& file) {
         if(passed) {
             cout << "Pass!";
         }
-        input.close();
-        output.close();
+        cin.rdbuf(a);
+        cout.rdbuf(b);
+        cout << endl;
     }
+    return;
 }
