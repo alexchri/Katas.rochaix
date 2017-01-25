@@ -8,7 +8,7 @@ valid inputs:
 	$<numeral>	//takes Roman Numeral input, outputs Number value
 	$<number>	//takes Number input, outputs Roman Numeral value
 	$help		//provides instructions for use, and description
-	$test *.txt	//uses *.txt file as input
+	$test *.txt	//uses *.txt file as input, terminates program
 	$q		//exit program (allows multiple inputs!)
 
 Make commands:
