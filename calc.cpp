@@ -15,7 +15,8 @@ string help_message() {
 
 string calc(const string& input) {
     string answer;
-    
+    //temp for compile
+    answer = input;
     return answer;
 }
 

@@ -3,6 +3,10 @@ Welcome to Alex Rochaix’s Github account!
 PROJECT/Roman Numerals:
 	Roman Kata by Alex Rochaix [C++, 2017]
 	This project is entirely functional on the command line.
+running:
+	(1) make release
+	(2) ./roman
+	(3) when finished (using ‘q’), use make clean to remove -o and .exe
 
 valid inputs:
 	$<numeral>	//takes Roman Numeral input, outputs Number value
@@ -18,7 +22,7 @@ Make commands:
 
 Files included:
 	//driver files
-		driver.cpp		//main file
+		roman.cpp		//main file
 		calc.cpp , calc.h	//functions file, header file
 
 	//test files		
