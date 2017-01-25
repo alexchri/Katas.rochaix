@@ -8,13 +8,13 @@ valid inputs:
 	$<numeral>	//takes Roman Numeral input, outputs Number value
 	$<number>	//takes Number input, outputs Roman Numeral value
 	$help		//provides instructions for use, and description
-	$q		//exit program	
+	$test *.txt	//uses *.txt file as input
+	$q		//exit program (allows multiple inputs!)
 
 Make commands:
 	make release 	//runs with -O3 flag (make run essentially!)
 	make -R -r	//builds -o files and .exe, treats all warnings as errors
-	make clean 	//removes object files (*.o) and executable
-	make test	//redirects .txt input file and writes output to out.txt	
+	make clean 	//removes object files (*.o) and executable	
 
 Files included:
 	//driver files
@@ -22,10 +22,15 @@ Files included:
 		calc.cpp , calc.h	//functions file, header file
 
 	//test files		
-		test.txt		//test input file
+		test.txt		//test input file	
 
 	//Makefile
 		Makefile
+
+Notes:
+	-tests are formatted <input> <correct> in *.txt file
+	-“test” will write “line #: <output>” for every incorrect to out.txt
+	-if all tests pass, “test” will write “Pass!” to out.txt
 
 Dependencies in makefile:
 	driver.o: driver.cpp calc.h
