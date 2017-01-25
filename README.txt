@@ -8,7 +8,7 @@ valid inputs:
 	$<numeral>	//takes Roman Numeral input, outputs Number value
 	$<number>	//takes Number input, outputs Roman Numeral value
 	$help		//provides instructions for use, and description
-	$test *.txt	//uses *.txt file as input, terminates program
+	$test *.txt	//uses *.txt file as input, writes test results to out.txt
 	$q		//exit program (allows multiple inputs!)
 
 Make commands:
@@ -28,6 +28,7 @@ Files included:
 		Makefile
 
 Notes:
+	-test command will take any .txt file, provided formatted correctly
 	-tests are formatted <input> <correct> in *.txt file
 	-“test” will write “line #: <output>” for every incorrect to out.txt
 	-if all tests pass, “test” will write “Pass!” to out.txt
