@@ -18,7 +18,8 @@ struct flags {
     bool n = false;
     bool h = false;
 };
+std::string help_message(); //print out help message
 void cmndline(flags& flag, int argc, char* argv[]); //process commandline
-void calc(const std::string& input, flags& flag); //process word input
+void calc(const std::string& input); //process word input
 
 #endif /* calc_h */

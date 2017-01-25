@@ -12,15 +12,11 @@ int main(int argc, char * argv[]) {
     flags flag;
     string input;
     
-/******** PROCESS CMNDLINE *************/
-    
-    cmndline(flag, argc, argv);
-
 /*********** USER INPUT ****************/
-    
-    while(input != "q") {
+    while(input != "q") { //allow user to input multiple conversions
+        printf("enter: ");
         cin >> input;
-        calc(input, flag); //produce correct flag output
+        calc(input); //produce correct flag output
     }
     
     return 0;
