@@ -45,10 +45,10 @@ string calc(const string& input) {
         return "invalid";
     }
     else if(type == 0) { //roman numeral
-        answer = roman(input);
+        answer = number(input);
     }
     else if(type == 1) { //number 
-        answer = number(input);
+        answer = roman(input);
     }
     return answer;
 }
@@ -125,7 +125,7 @@ string roman(const string& num) {
     string temp = "";
     string answer = "";
     int exp_ten = 0;
-    for(int i = (int)num.size() - 1; i > 0; --i) {
+    for(int i = (int)num.size() - 1; i >= 0; --i) {
         if(num[i] == '1') {
             if(exp_ten == 0) {
                 temp = "I"; //1
@@ -284,7 +284,7 @@ void test(const string& file) { //add .txt validation and user output
         cout.rdbuf(b);
         cout << endl;
         if(passed) {
-            cout << "Pass!" << endl;
+            cout << "Pass!" << endl << endl;
         }
         else {
             cout << "See out.txt for errors" << endl << endl;
