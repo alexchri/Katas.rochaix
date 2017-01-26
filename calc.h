@@ -14,9 +14,12 @@
 #include <stdio.h>
 #include <fstream>
 #include <sstream>
+#include <cctype>
 #include <string>
 
 void help_message(); //print out help message
+
+int rORn(const std::string& input); //valid input check
 
 std::string calc(const std::string& input); //process word input
 
