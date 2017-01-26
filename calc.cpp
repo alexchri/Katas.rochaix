@@ -13,9 +13,8 @@ void help_message() {
     cout << "\nWelcome to Roman Numeral calculator!\nValid inputs include:\n\t<numeral> for Roman Numeral to number\n\t<number> for Number to Roman Numeral.\n\t'q' at any time to quit the program.\n\t'test', then '*.txt' to run input from test file (*.txt)\n\t'help' at any time to return to this message.\n\n";
 }
 
-int rORn(const string& input) { //returns -1 if invalid, 0 if roman, 1 if number
+int rORn(const string& input, const string& valid) { //returns -1 if invalid, 0 if roman, 1 if number
     int val = -1;
-    string valid = "IVXLCDM";
     
     if(isdigit(input[0])) { val = 1; } //if char is a num, return value is set to 1
     else if(valid.find(input[0]) != -1) { val = 0; } //if char is roman numeral, return value is set to 0
@@ -38,16 +37,92 @@ int rORn(const string& input) { //returns -1 if invalid, 0 if roman, 1 if number
 
 string calc(const string& input) {
     string answer;
-    int type = rORn(input);
+    string valid = "IVXLCDM";
+    
+    int type = rORn(input, valid);
+    
     if(type == -1) {
         return "invalid";
     }
     else if(type == 0) { //roman numeral
-        
+        answer = roman(input);
     }
     else if(type == 1) { //number 
-        
+        answer = number(input);
     }
+    return answer;
+}
+
+string roman(const string& num) {
+    string answer;
+    char prev = '_';
+    int val = 0;
+    
+    for(int i = 0; i < (int)num.size(); ++i) {
+        if(num[i] == 'I') { //1
+            ++val;
+            prev = num[i];
+        }
+        else if(num[i] == 'V') { //5
+            if(prev == 'I') {
+                val += 3; //case of IV = 4
+            }
+            else {
+                val += 5;
+            }
+            prev = num[i];
+        }
+        else if(num[i] == 'X') { //10
+            if(prev == 'I') {
+                val += 8; //case of IX = 9
+            }
+            else {
+                val += 10;
+            }
+            prev = num[i];
+        }
+        else if(num[i] == 'L') { //50
+            if(prev == 'X') {
+                val += 30; //case of XL = 40
+            }
+            else {
+                val += 50;
+            }
+            prev = num[i];
+        }
+        else if(num[i] == 'C') { //100
+            if(prev == 'X') {
+                val += 80; //case of XC = 90
+            }
+            else {
+                val += 100;
+            }
+            prev = num[i];
+        }
+        else if(num[i] == 'D') { //500
+            if(prev == 'C') {
+                val += 300; //case of CD = 400
+            }
+            else {
+                val += 500;
+            }
+            prev = num[i];
+        }
+        else if(num[i] == 'M') { //1000
+            if(prev == 'C') {
+                val += 800; //case of CM = 900
+            }
+            else {
+                val += 1000;
+            }
+            prev = num[i];
+        }
+    }
+    return answer = to_string(val);
+}
+
+string number(const string& rom) {
+    string answer;
     return answer;
 }
 

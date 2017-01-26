@@ -12,9 +12,12 @@ int main() {
     
     string input;
     help_message();
+    
 /*********** USER INPUT ****************/
     while(input != "q") { //allow user to input multiple conversions
+        
         cin >> input;
+        
         if(input == "help") {
             help_message();
         }
