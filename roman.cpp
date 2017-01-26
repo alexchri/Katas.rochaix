@@ -29,7 +29,7 @@ int main() {
             //do nothing
         }
         else {
-            cout << calc(input) << endl;
+            cout << endl << calc(input) << endl << endl;
         }
     }
     
