@@ -27,7 +27,7 @@ int rORn(const string& input) { //returns -1 if invalid, 0 if roman, 1 if number
                 return val = -1;
             }
         }
-        else if(valid.find(input[0]) != -1) {
+        else if(valid.find(input[i]) != -1) {
             if(val == 1) {
                 return val = -1;
             }
@@ -40,7 +40,7 @@ string calc(const string& input) {
     string answer;
     int type = rORn(input);
     if(type == -1) {
-        return "Invalid input, try again\n";
+        return "invalid";
     }
     else if(type == 0) { //roman numeral
         
@@ -51,7 +51,7 @@ string calc(const string& input) {
     return answer;
 }
 
-void test(const string& file) {
+void test(const string& file) { //add .txt validation and user output
     string in;
     string out;
     string value;
@@ -62,8 +62,16 @@ void test(const string& file) {
     if((int)file.find(".txt") != -1) {
         //cast int because size_t vs signed
         ifstream input(file);
+        if(!input.is_open()) {
+            cout << "Invalid *.txt file\n\n";
+            return;
+        }
         cin.rdbuf(input.rdbuf()); //redirect std::cin to in.txt!
         ofstream output("out.txt");
+        if(!output.is_open()) {
+            cout << "Did not find out.txt file\n\n";
+            return;
+        }
         cout.rdbuf(output.rdbuf()); //redirect std::cout to out.txt!
         //freopen(file.c_str(), "r", stdin);
         //freopen("out.txt", "w", stdout);
@@ -88,6 +96,8 @@ void test(const string& file) {
         else {
             cout << "See out.txt for errors" << endl << endl;
         }
+        input.close(); //close files for good practice
+        output.close();
     }
     return;
 }
