@@ -12,6 +12,43 @@ using namespace std;
 void help_message() {
     cout << "Welcome to Roman Numeral calculator!\n\nValid inputs include:\n\t<numeral> for Roman Numeral to number\n\t<number> for Number to Roman Numeral\n\t'q' at any time to quit the program.\n\t'test', then '*.txt' to run input from test file (*.txt)\n\t'help' at any time to return to this message.\nValid range for calculator:\n\t0 to 3999\n\n";
 }
+bool valid_rom(const string& rom) {
+    if((int)rom.size() == 1) {
+        return true;
+    }
+    char prev = rom[0];
+    for(int i = 1; i < (int)rom.size(); ++i) {
+        if(rom[i] == 'I'){
+            
+        }
+        else if(rom[i] == 'X') {
+            
+        }
+        else if(rom[i] == 'C') {
+            
+        }
+        else if(rom[i] == 'M') {
+            
+        }
+        else if(rom[i] == 'V') {
+            
+        }
+        else if(rom[i] == 'L') {
+            
+        }
+        else if(rom[i] == 'D') {
+            
+        }
+    }
+    return true;
+}
+
+bool valid_num(const string& num) {
+    if((stoi(num) >= 0) && (stoi(num) < 4000)) {
+        return true;
+    }
+    return false;
+}
 
 int rORn(const string& input, const string& valid) { //returns -1 if invalid, 0 if roman, 1 if number
     int val = -1;
@@ -125,6 +162,9 @@ string roman(const string& num) {
     string temp = "";
     string answer = "";
     int exp_ten = 0;
+    if(!valid_num(num)) { //valid num check: between 0 and 3999
+        return "invalid";
+    }
     for(int i = (int)num.size() - 1; i >= 0; --i) {
         if(num[i] == '1') {
             if(exp_ten == 0) {
