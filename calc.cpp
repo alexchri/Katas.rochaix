@@ -53,7 +53,7 @@ string calc(const string& input) {
     return answer;
 }
 
-string num(const string& rom) {
+string number(const string& rom) {
     string answer;
     char prev = '_';
     int val = 0;
@@ -122,8 +122,125 @@ string num(const string& rom) {
 }
 
 string roman(const string& num) {
-    string answer;
-    
+    string temp = "";
+    string answer = "";
+    int exp_ten = 0;
+    for(int i = (int)num.size() - 1; i > 0; --i) {
+        if(num[i] == '1') {
+            if(exp_ten == 0) {
+                temp = "I"; //1
+            }
+            else if(exp_ten == 1) {
+                temp = "X"; //10
+            }
+            else if(exp_ten == 2) {
+                temp = "C"; //100
+            }
+            else if(exp_ten == 3) {
+                temp = "M"; //1000
+            }
+        }
+        else if(num[i] == '2') {
+            if(exp_ten == 0) {
+                temp = "II"; //2
+            }
+            else if(exp_ten == 1) {
+                temp = "XX"; //20
+            }
+            else if(exp_ten == 2) {
+                temp = "CC"; //200
+            }
+            else if(exp_ten == 3) {
+                temp = "MM"; //2000
+            }
+        }
+        else if(num[i] == '3') {
+            if(exp_ten == 0) {
+                temp = "III"; //3
+            }
+            else if(exp_ten == 1) {
+                temp = "XXX"; //30
+            }
+            else if(exp_ten == 2) {
+                temp = "CCC"; //300
+            }
+            else if(exp_ten == 3) {
+                temp = "MMM"; //3000
+            }
+        }
+        else if(num[i] == '4') {
+            if(exp_ten == 0) {
+                temp = "IV"; //4
+            }
+            else if(exp_ten == 1) {
+                temp = "XL"; //40
+            }
+            else if(exp_ten == 2) {
+                temp = "CD"; //400
+            }
+        }
+        else if(num[i] == '5') {
+            if(exp_ten == 0) {
+                temp = "V"; //5
+            }
+            else if(exp_ten == 1) {
+                temp = "L"; //50
+            }
+            else if(exp_ten == 2) {
+                temp = "D"; //500
+            }
+        }
+        else if(num[i] == '6') {
+            if(exp_ten == 0) {
+                temp = "VI"; //6
+            }
+            else if(exp_ten == 1) {
+                temp = "LX"; //60
+            }
+            else if(exp_ten == 2) {
+                temp = "DC"; //600
+            }
+        }
+        else if(num[i] == '7') {
+            if(exp_ten == 0) {
+                temp = "VII"; //7
+            }
+            else if(exp_ten == 1) {
+                temp = "LXX"; //70
+            }
+            else if(exp_ten == 2) {
+                temp = "DCC"; //700
+            }
+        }
+        else if(num[i] == '8') {
+            if(exp_ten == 0) {
+                temp = "VIII"; //8
+            }
+            else if(exp_ten == 1) {
+                temp = "LXXX"; //80
+            }
+            else if(exp_ten == 2) {
+                temp = "DCCC"; //800
+            }
+        }
+        else if(num[i] == '9') {
+            if(exp_ten == 0) {
+                temp = "IX"; //9
+            }
+            else if(exp_ten == 1) {
+                temp = "XC"; //90
+            }
+            else if(exp_ten == 2) {
+                temp = "CM"; //900
+            }
+        }
+        else if(num[i] == '0') {
+            //nothing
+        }
+        temp += answer; //insert temp in front of previous answer since going right to left
+        answer = temp;
+        ++exp_ten; //shift 10 by power of one to the left
+    }
     return answer;
 }
 

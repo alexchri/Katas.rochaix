@@ -15,6 +15,7 @@
 #include <fstream>
 #include <sstream>
 #include <cctype>
+#include <cstdlib>
 #include <string>
 
 void help_message(); //print out help message
