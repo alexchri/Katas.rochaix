@@ -53,76 +53,77 @@ string calc(const string& input) {
     return answer;
 }
 
-string roman(const string& num) {
+string num(const string& rom) {
     string answer;
     char prev = '_';
     int val = 0;
     
-    for(int i = 0; i < (int)num.size(); ++i) {
-        if(num[i] == 'I') { //1
+    for(int i = 0; i < (int)rom.size(); ++i) {
+        if(rom[i] == 'I') { //1
             ++val;
-            prev = num[i];
+            prev = rom[i];
         }
-        else if(num[i] == 'V') { //5
+        else if(rom[i] == 'V') { //5
             if(prev == 'I') {
                 val += 3; //case of IV = 4
             }
             else {
                 val += 5;
             }
-            prev = num[i];
+            prev = rom[i];
         }
-        else if(num[i] == 'X') { //10
+        else if(rom[i] == 'X') { //10
             if(prev == 'I') {
                 val += 8; //case of IX = 9
             }
             else {
                 val += 10;
             }
-            prev = num[i];
+            prev = rom[i];
         }
-        else if(num[i] == 'L') { //50
+        else if(rom[i] == 'L') { //50
             if(prev == 'X') {
                 val += 30; //case of XL = 40
             }
             else {
                 val += 50;
             }
-            prev = num[i];
+            prev = rom[i];
         }
-        else if(num[i] == 'C') { //100
+        else if(rom[i] == 'C') { //100
             if(prev == 'X') {
                 val += 80; //case of XC = 90
             }
             else {
                 val += 100;
             }
-            prev = num[i];
+            prev = rom[i];
         }
-        else if(num[i] == 'D') { //500
+        else if(rom[i] == 'D') { //500
             if(prev == 'C') {
                 val += 300; //case of CD = 400
             }
             else {
                 val += 500;
             }
-            prev = num[i];
+            prev = rom[i];
         }
-        else if(num[i] == 'M') { //1000
+        else if(rom[i] == 'M') { //1000
             if(prev == 'C') {
                 val += 800; //case of CM = 900
             }
             else {
                 val += 1000;
             }
-            prev = num[i];
+            prev = rom[i];
         }
     }
     return answer = to_string(val);
 }
 
-string number(const string& rom) {
+string roman(const string& num) {
     string answer;
+    
     return answer;
 }
 
