@@ -12,32 +12,95 @@ using namespace std;
 void help_message() {
     cout << "Welcome to Roman Numeral calculator!\n\nValid inputs include:\n\t<numeral> for Roman Numeral to number\n\t<number> for Number to Roman Numeral\n\t'q' at any time to quit the program.\n\t'test', then '*.txt' to run input from test file (*.txt)\n\t'help' at any time to return to this message.\nValid range for calculator:\n\t0 to 3999\n\n";
 }
-bool valid_rom(const string& rom) {
+bool valid_rom(const string& rom) { //most complicated function of the program!
+    
     if((int)rom.size() == 1) {
         return true;
     }
-    char prev = rom[0];
+    
+    int I = 0;
+    int X = 0;
+    int C = 0;
+    int M = 0;
+    int V = 0;
+    int L = 0;
+    int D = 0;
+    
     for(int i = 1; i < (int)rom.size(); ++i) {
-        if(rom[i] == 'I'){
-            
+        if(rom[i-1] == 'I') { //check for no more than 3 repeats of I, correct position of I
+            if(rom[i] == rom[i-1]) {
+                ++I;
+            }
+            if(rom[i-1] == 'I') {
+                if((rom[i] == 'L') || (rom[i] == 'C') || (rom[i] == 'D') || (rom[i] == 'M')) {
+                    return false;
+                }
+            }
+            if(I >= 3) {
+                return false;
+            }
         }
-        else if(rom[i] == 'X') {
-            
+        if(rom[i-1] == 'X') { //check for no more than 3 repeats of X, correct position of X
+            if(rom[i] == rom[i-1]) {
+                ++X;
+            }
+            if(rom[i-1] == 'X') {
+                if((rom[i] == 'D') || (rom[i] == 'M')) {
+                    return false;
+                }
+            }
+            if(X >= 3) {
+                return false;
+            }
         }
-        else if(rom[i] == 'C') {
-            
+        if(rom[i-1] == 'C') { //check for no more than 3 repeats of C, correct position of C
+            if(rom[i] == rom[i-1]) {
+                ++C;
+            }
+            if(C >= 3) {
+                return false;
+            }
         }
-        else if(rom[i] == 'M') {
-            
+        if(rom[i-1] == 'M') { //check for no more than 3 repeats of M, correct position of M
+            if(rom[i] == rom[i-1]) {
+                ++M;
+            }
+            if(M >= 3) {
+                return false;
+            }
         }
-        else if(rom[i] == 'V') {
-            
+        if(rom[i-1] == 'V') { //check for no duplicate V, correct position of V
+            ++V;
+            if(rom[i-1] == 'V') {
+                if((rom[i] == 'L') || (rom[i] == 'X') || (rom[i] == 'C') || (rom[i] == 'M')) {
+                    return false;
+                }
+            }
+            if(V > 1) {
+                return false;
+            }
         }
-        else if(rom[i] == 'L') {
-            
+        if(rom[i-1] == 'L') { //check for no duplicate L, correct position of L
+            ++L;
+            if(L > 1) {
+                return false;
+            }
+            if(rom[i-1] == 'L') {
+                if((rom[i] == 'C') || (rom[i] == 'M')) {
+                    return false;
+                }
+            }
         }
-        else if(rom[i] == 'D') {
-            
+        if(rom[i-1] == 'D') { //check for no duplicate D, correct position of D
+            ++D;
+            if(rom[i-1] == 'D') {
+                if(rom[i] == 'M') {
+                    return false;
+                }
+            }
+            if(D > 1) {
+                return false;
+            }
         }
     }
     return true;
@@ -94,7 +157,9 @@ string number(const string& rom) {
     string answer;
     char prev = '_';
     int val = 0;
-    
+    if(!valid_rom(rom)) {
+        return "invalid";
+    }
     for(int i = 0; i < (int)rom.size(); ++i) {
         if(rom[i] == 'I') { //1
             ++val;

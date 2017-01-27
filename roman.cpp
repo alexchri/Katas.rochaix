@@ -10,6 +10,9 @@ using namespace std;
 
 int main() {
     
+//(1) ADD COMMENT FUNCTIONALITY TO TEST FILE FUNCTIONALITY
+//(2) FINISH VALID_ROM CHECK
+    
     string input;
     help_message();
     
