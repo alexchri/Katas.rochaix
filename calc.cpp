@@ -120,7 +120,7 @@ int rORn(const string& input, const string& valid) { //returns -1 if invalid, 0 
     if(isdigit(input[0])) { //if char is a num, return value is set to 1
         val = 1;
     }
-    else if(valid.find(input[0]) != -1) { //if char is roman numeral, return value is set to 0
+    else if((int)valid.find(input[0]) != -1) { //if char is roman numeral, return value is set to 0
         val = 0;
     }
     else { //if neither, return -1 cause invalid input
@@ -133,7 +133,7 @@ int rORn(const string& input, const string& valid) { //returns -1 if invalid, 0 
                 return val = -1;
             }
         }
-        else if(valid.find(input[i]) != -1) {
+        else if((int)valid.find(input[i]) != -1) {
             if(val == 1) {
                 return val = -1;
             }

@@ -32,7 +32,7 @@ int main() {
             //do nothing
         }
         else {
-            cout << endl << calc(input) << endl << endl;
+            cout << endl << ": " << calc(input) << endl << endl;
         }
     }
     
