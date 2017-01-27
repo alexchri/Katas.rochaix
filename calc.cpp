@@ -27,7 +27,7 @@ bool valid_rom(const string& rom) { //most complicated function of the program!
     int L = 0;
     int D = 0;
     
-    for(int i = 1; i < (int)rom.size(); ++i) {
+    for(unsigned long i = 1; i < rom.size(); ++i) {
         if(rom[i-1] == 'I') { //check for no more than 3 repeats of I, correct position of I
             if(rom[i] == rom[i-1]) {
                 ++I;
@@ -127,7 +127,7 @@ int rORn(const string& input, const string& valid) { //returns -1 if invalid, 0 
         return val;
     }
 
-    for(int i = 1; i < (int)input.size(); ++i) { //invalid check using first char as comparator
+    for(unsigned long i = 1; i < input.size(); ++i) { //invalid check using first char as comparator
         if(isdigit(input[i])) {
             if(val == 0) {
                 return val = -1;
@@ -167,7 +167,7 @@ string number(const string& rom) {
     if(!valid_rom(rom)) {
         return "invalid";
     }
-    for(int i = 0; i < (int)rom.size(); ++i) {
+    for(unsigned long i = 0; i < rom.size(); ++i) {
         if(rom[i] == 'I') { //1
             ++val;
             prev = rom[i];
@@ -238,7 +238,7 @@ string roman(const string& num) {
         return "invalid";
     }
     for(int i = (int)num.size() - 1; i >= 0; --i) {
-        if(num[i] == '1') {
+        if(num[(unsigned long)i] == '1') {
             if(exp_ten == 0) {
                 temp = "I"; //1
             }
@@ -252,7 +252,7 @@ string roman(const string& num) {
                 temp = "M"; //1000
             }
         }
-        else if(num[i] == '2') {
+        else if(num[(unsigned long)i] == '2') {
             if(exp_ten == 0) {
                 temp = "II"; //2
             }
@@ -266,7 +266,7 @@ string roman(const string& num) {
                 temp = "MM"; //2000
             }
         }
-        else if(num[i] == '3') {
+        else if(num[(unsigned long)i] == '3') {
             if(exp_ten == 0) {
                 temp = "III"; //3
             }
@@ -280,7 +280,7 @@ string roman(const string& num) {
                 temp = "MMM"; //3000
             }
         }
-        else if(num[i] == '4') {
+        else if(num[(unsigned long)i] == '4') {
             if(exp_ten == 0) {
                 temp = "IV"; //4
             }
@@ -291,7 +291,7 @@ string roman(const string& num) {
                 temp = "CD"; //400
             }
         }
-        else if(num[i] == '5') {
+        else if(num[(unsigned long)i] == '5') {
             if(exp_ten == 0) {
                 temp = "V"; //5
             }
@@ -302,7 +302,7 @@ string roman(const string& num) {
                 temp = "D"; //500
             }
         }
-        else if(num[i] == '6') {
+        else if(num[(unsigned long)i] == '6') {
             if(exp_ten == 0) {
                 temp = "VI"; //6
             }
@@ -313,7 +313,7 @@ string roman(const string& num) {
                 temp = "DC"; //600
             }
         }
-        else if(num[i] == '7') {
+        else if(num[(unsigned long)i] == '7') {
             if(exp_ten == 0) {
                 temp = "VII"; //7
             }
@@ -324,7 +324,7 @@ string roman(const string& num) {
                 temp = "DCC"; //700
             }
         }
-        else if(num[i] == '8') {
+        else if(num[(unsigned long)i] == '8') {
             if(exp_ten == 0) {
                 temp = "VIII"; //8
             }
@@ -335,7 +335,7 @@ string roman(const string& num) {
                 temp = "DCCC"; //800
             }
         }
-        else if(num[i] == '9') {
+        else if(num[(unsigned long)i] == '9') {
             if(exp_ten == 0) {
                 temp = "IX"; //9
             }
@@ -346,7 +346,7 @@ string roman(const string& num) {
                 temp = "CM"; //900
             }
         }
-        else if(num[i] == '0') {
+        else if(num[(unsigned long)i] == '0') {
             //nothing
         }
         temp += answer; //insert temp in front of previous answer since going right to left
