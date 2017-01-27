@@ -19,6 +19,7 @@ bool valid_rom(const string& rom) { //most complicated function of the program!
         return true;
     }
     
+    //initialize counters for validity checks
     int I = 0;
     int X = 0;
     int C = 0;
@@ -30,7 +31,7 @@ bool valid_rom(const string& rom) { //most complicated function of the program!
     for(unsigned long i = 1; i < rom.size(); ++i) {
         if(rom[i-1] == 'I') { //check for no more than 3 repeats of I, correct position of I
             ++I;
-            if(rom[i-1] == 'I') {
+            if(rom[i-1] == 'I') { //cannot subtract I from L,C,D,M
                 if((rom[i] == 'L') || (rom[i] == 'C') || (rom[i] == 'D') || (rom[i] == 'M')) {
                     return false;
                 }
@@ -41,7 +42,7 @@ bool valid_rom(const string& rom) { //most complicated function of the program!
         }
         if(rom[i-1] == 'X') { //check for no more than 3 repeats of X, correct position of X
             ++X;
-            if(rom[i-1] == 'X') {
+            if(rom[i-1] == 'X') { //cannot subtract X from D,M
                 if((rom[i] == 'D') || (rom[i] == 'M')) {
                     return false;
                 }
@@ -64,7 +65,7 @@ bool valid_rom(const string& rom) { //most complicated function of the program!
         }
         if(rom[i-1] == 'V') { //check for no duplicate V, correct position of V
             ++V;
-            if(rom[i-1] == 'V') {
+            if(rom[i-1] == 'V') { //cannot subtract V from L,D,X,C,M
                 if((rom[i] == 'L') || (rom[i] == 'D') || (rom[i] == 'X') || (rom[i] == 'C') || (rom[i] == 'M')) {
                     return false;
                 }
@@ -78,7 +79,7 @@ bool valid_rom(const string& rom) { //most complicated function of the program!
             if(L > 1) {
                 return false;
             }
-            if(rom[i-1] == 'L') {
+            if(rom[i-1] == 'L') { //cannot subtract L from C,M,D
                 if((rom[i] == 'C') || (rom[i] == 'M') || (rom[i] == 'D')) {
                     return false;
                 }
@@ -86,7 +87,7 @@ bool valid_rom(const string& rom) { //most complicated function of the program!
         }
         if(rom[i-1] == 'D') { //check for no duplicate D, correct position of D
             ++D;
-            if(rom[i-1] == 'D') {
+            if(rom[i-1] == 'D') { //cannot subtract D from M
                 if(rom[i] == 'M') {
                     return false;
                 }
@@ -100,7 +101,7 @@ bool valid_rom(const string& rom) { //most complicated function of the program!
 }
 
 bool valid_num(const string& num) {
-    if((stoi(num) >= 0) && (stoi(num) < 4000)) {
+    if((stoi(num) >= 0) && (stoi(num) < 4000)) { //valid num inputs are 0 to 3999
         return true;
     }
     return false;
@@ -134,29 +135,31 @@ int rORn(const string& input, const string& valid) { //returns -1 if invalid, 0 
     return val;
 }
 
+//************************* Primary Function ************************
 string calc(const string& input) {
     string answer;
-    string valid = "IVXLCDM";
+    string valid = "IVXLCDM"; //valid roman chars container
     
-    int type = rORn(input, valid);
+    int type = rORn(input, valid); //validity check
     
-    if(type == -1) {
+    if(type == -1) { //invalid case
         return "invalid";
     }
-    else if(type == 0) { //roman numeral
+    else if(type == 0) { //roman numeral case
         answer = number(input);
     }
-    else if(type == 1) { //number 
+    else if(type == 1) { //number case
         answer = roman(input);
     }
     return answer;
 }
+//********************************************************************
 
 string number(const string& rom) {
     string answer;
-    char prev = '_';
+    char prev = '_'; //initialize to something for good code practice
     int val = 0;
-    if(!valid_rom(rom)) {
+    if(!valid_rom(rom)) { //validity check
         return "invalid";
     }
     for(unsigned long i = 0; i < rom.size(); ++i) {
@@ -219,7 +222,7 @@ string number(const string& rom) {
             prev = rom[i];
         }
     }
-    return answer = to_string(val);
+    return answer = to_string(val); //return answer
 }
 
 string roman(const string& num) {
@@ -341,11 +344,11 @@ string roman(const string& num) {
         else if(num[(unsigned long)i] == '0') {
             //nothing
         }
-        temp += answer; //insert temp in front of previous answer since going right to left
+        temp += answer; //insert temp in front of previous answer since iterating right to left
         answer = temp;
         ++exp_ten; //shift 10 by power of one to the left
     }
-    return answer;
+    return answer; //return answer
 }
 
 void test(const string& file) { //add .txt validation and user output
@@ -358,13 +361,13 @@ void test(const string& file) { //add .txt validation and user output
     streambuf *a = cin.rdbuf();
     if((int)file.find(".txt") != -1) { //cast int because size_t vs signed
         ifstream input(file); //open infile named 'file'
-        if(!input.is_open()) {
+        if(!input.is_open()) { //valid infile check
             cout << "Invalid *.txt file\n\n";
             return;
         }
         cin.rdbuf(input.rdbuf()); //redirect cin to in.txt!
         ofstream output("out.txt"); //open outfile named 'out.txt'
-        if(!output.is_open()) {
+        if(!output.is_open()) { //valid outfile check
             cout << "Did not find out.txt file\n\n";
             return;
         }
@@ -382,7 +385,7 @@ void test(const string& file) { //add .txt validation and user output
 //**************************************************************************
             out = calc(in); //TEST THE MAIN FUNCTION OF ROMAN.CPP
 //**************************************************************************
-            if(out != value) {
+            if(out != value) { //tell user what lines failed in *.txt test
                 passed = false;
                 cout << "line " << line << ": " << out << endl;
             }
