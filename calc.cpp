@@ -12,6 +12,7 @@ using namespace std;
 void help_message() {
     cout << "Welcome to Roman Numeral calculator!\n\nValid inputs include:\n\t<numeral> for Roman Numeral to number\n\t<number> for Number to Roman Numeral\n\t'q' at any time to quit the program.\n\t'test', then '*.txt' to run input from test file (*.txt)\n\t'help' at any time to return to this message.\nValid range for calculator:\n\t0 to 3999\n\n";
 }
+
 bool valid_rom(const string& rom) { //most complicated function of the program!
     
     if((int)rom.size() == 1) {
@@ -116,9 +117,15 @@ bool valid_num(const string& num) {
 int rORn(const string& input, const string& valid) { //returns -1 if invalid, 0 if roman, 1 if number
     int val = -1;
     
-    if(isdigit(input[0])) { val = 1; } //if char is a num, return value is set to 1
-    else if(valid.find(input[0]) != -1) { val = 0; } //if char is roman numeral, return value is set to 0
-    else { return val; } //if neither, return -1 cause invalid input
+    if(isdigit(input[0])) { //if char is a num, return value is set to 1
+        val = 1;
+    }
+    else if(valid.find(input[0]) != -1) { //if char is roman numeral, return value is set to 0
+        val = 0;
+    }
+    else { //if neither, return -1 cause invalid input
+        return val;
+    }
 
     for(int i = 1; i < (int)input.size(); ++i) { //invalid check using first char as comparator
         if(isdigit(input[i])) {
@@ -357,25 +364,23 @@ void test(const string& file) { //add .txt validation and user output
     bool passed = true;
     streambuf *b = cout.rdbuf();
     streambuf *a = cin.rdbuf();
-    if((int)file.find(".txt") != -1) {
-        //cast int because size_t vs signed
-        ifstream input(file);
+    if((int)file.find(".txt") != -1) { //cast int because size_t vs signed
+        ifstream input(file); //open infile named 'file'
         if(!input.is_open()) {
             cout << "Invalid *.txt file\n\n";
             return;
         }
-        cin.rdbuf(input.rdbuf()); //redirect std::cin to in.txt!
-        ofstream output("out.txt");
+        cin.rdbuf(input.rdbuf()); //redirect cin to in.txt!
+        ofstream output("out.txt"); //open outfile named 'out.txt'
         if(!output.is_open()) {
             cout << "Did not find out.txt file\n\n";
             return;
         }
-        cout.rdbuf(output.rdbuf()); //redirect std::cout to out.txt!
-        //freopen(file.c_str(), "r", stdin);
-        //freopen("out.txt", "w", stdout);
+        cout.rdbuf(output.rdbuf()); //redirect cout to out.txt!
+        
         while(cin >> in) {
             cin >> value;
-            out = calc(in);
+            out = calc(in); //<-TEST THE MAIN FUNCTION OF ROMAN.CPP
             if(out != value) {
                 passed = false;
                 cout << "line " << line << ": " << out << endl;
@@ -387,7 +392,8 @@ void test(const string& file) { //add .txt validation and user output
         }
         cin.rdbuf(a);
         cout.rdbuf(b);
-        cout << endl;
+        
+        cout << endl; //return to terminal output
         if(passed) {
             cout << "Pass!" << endl << endl;
         }
