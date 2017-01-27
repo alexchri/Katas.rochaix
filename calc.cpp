@@ -29,9 +29,7 @@ bool valid_rom(const string& rom) { //most complicated function of the program!
     
     for(unsigned long i = 1; i < rom.size(); ++i) {
         if(rom[i-1] == 'I') { //check for no more than 3 repeats of I, correct position of I
-            if(rom[i] == rom[i-1]) {
-                ++I;
-            }
+            ++I;
             if(rom[i-1] == 'I') {
                 if((rom[i] == 'L') || (rom[i] == 'C') || (rom[i] == 'D') || (rom[i] == 'M')) {
                     return false;
@@ -42,9 +40,7 @@ bool valid_rom(const string& rom) { //most complicated function of the program!
             }
         }
         if(rom[i-1] == 'X') { //check for no more than 3 repeats of X, correct position of X
-            if(rom[i] == rom[i-1]) {
-                ++X;
-            }
+            ++X;
             if(rom[i-1] == 'X') {
                 if((rom[i] == 'D') || (rom[i] == 'M')) {
                     return false;
@@ -55,17 +51,13 @@ bool valid_rom(const string& rom) { //most complicated function of the program!
             }
         }
         if(rom[i-1] == 'C') { //check for no more than 3 repeats of C, correct position of C
-            if(rom[i] == rom[i-1]) {
-                ++C;
-            }
+            ++C;
             if(C >= 3) {
                 return false;
             }
         }
         if(rom[i-1] == 'M') { //check for no more than 3 repeats of M, correct position of M
-            if(rom[i] == rom[i-1]) {
-                ++M;
-            }
+            ++M;
             if(M >= 3) {
                 return false;
             }
@@ -73,7 +65,7 @@ bool valid_rom(const string& rom) { //most complicated function of the program!
         if(rom[i-1] == 'V') { //check for no duplicate V, correct position of V
             ++V;
             if(rom[i-1] == 'V') {
-                if((rom[i] == 'L') || (rom[i] == 'X') || (rom[i] == 'C') || (rom[i] == 'M')) {
+                if((rom[i] == 'L') || (rom[i] == 'D') || (rom[i] == 'X') || (rom[i] == 'C') || (rom[i] == 'M')) {
                     return false;
                 }
             }
@@ -87,7 +79,7 @@ bool valid_rom(const string& rom) { //most complicated function of the program!
                 return false;
             }
             if(rom[i-1] == 'L') {
-                if((rom[i] == 'C') || (rom[i] == 'M')) {
+                if((rom[i] == 'C') || (rom[i] == 'M') || (rom[i] == 'D')) {
                     return false;
                 }
             }
@@ -383,6 +375,7 @@ void test(const string& file) { //add .txt validation and user output
             if(in[0] == '/') { //allow comments in *.txt file
                 string junk;
                 getline(cin, junk);
+                ++line;
                 goto loop;
             }
             cin >> value;
