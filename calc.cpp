@@ -380,7 +380,7 @@ void test(const string& file) { //add .txt validation and user output
         
         while(cin >> in) {
             cin >> value;
-            out = calc(in); //<-TEST THE MAIN FUNCTION OF ROMAN.CPP
+            out = calc(in); //TEST THE MAIN FUNCTION OF ROMAN.CPP
             if(out != value) {
                 passed = false;
                 cout << "line " << line << ": " << out << endl;
