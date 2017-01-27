@@ -14,7 +14,7 @@ int main() {
 //(2) FINISH VALID_ROM CHECK
     
     string input;
-    help_message();
+    cout << "Welcome to Roman Numeral calculator!\n\n";
     
 /*********** USER INPUT ****************/
     while(input != "q") { //allow user to input multiple conversions

@@ -10,7 +10,7 @@
 using namespace std;
 
 void help_message() {
-    cout << "Welcome to Roman Numeral calculator!\n\nValid inputs include:\n\t<numeral> for Roman Numeral to number\n\t<number> for Number to Roman Numeral\n\t'q' at any time to quit the program.\n\t'test', then '*.txt' to run input from test file (*.txt)\n\t'help' at any time to return to this message.\nValid range for calculator:\n\t0 to 3999\n\n";
+    cout << "\nValid inputs include:\n\t<numeral> for Roman Numeral to number\n\t<number> for Number to Roman Numeral\n\t'q' at any time to quit the program.\n\t'test', then '*.txt' to run input from test file (*.txt)\n\t'help' at any time to return to this message.\nValid range for calculator:\n\t0 to 3999\n\n";
 }
 
 bool valid_rom(const string& rom) { //most complicated function of the program!
@@ -378,9 +378,17 @@ void test(const string& file) { //add .txt validation and user output
         }
         cout.rdbuf(output.rdbuf()); //redirect cout to out.txt!
         
+    loop:
         while(cin >> in) {
+            if(in[0] == '/') { //allow comments in *.txt file
+                string junk;
+                getline(cin, junk);
+                goto loop;
+            }
             cin >> value;
+//**************************************************************************
             out = calc(in); //TEST THE MAIN FUNCTION OF ROMAN.CPP
+//**************************************************************************
             if(out != value) {
                 passed = false;
                 cout << "line " << line << ": " << out << endl;

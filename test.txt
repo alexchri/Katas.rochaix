@@ -1,4 +1,6 @@
+//invalid checks
 1X      invalid
+//single
 1       I
 2       II
 3       III
@@ -11,12 +13,14 @@
 100     C
 500     D
 1000    M
+//special cases
 4       IV
 9       IX
 40      XL
 90      XC
 400     CD
 900     CM
+//single
 I       1
 II      2
 III     3
@@ -29,6 +33,7 @@ L       50
 C       100
 D       500
 M       1000
+//special cases
 IV      4
 IX      9
 XL      40
