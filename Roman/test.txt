@@ -1,0 +1,74 @@
+//TEST INPUT FILE - ALEX ROCHAIX
+//invalid mix checks
+1X      invalid
+X1      invalid
+//invalid subtraction checks
+MID     invalid
+IC      invalid
+IL      invalid
+IM      invalid
+VL      invalid
+VD      invalid
+VM      invalid
+XD      invalid
+XM      invalid
+LD      invalid
+LM      invalid
+DM      invalid
+//invalid sequential quadruplets or more
+MMMMD   invalid
+IIIIX   invalid
+XXXXD   invalid
+CCCCX   invalid
+//invalid unsequential quadruplets or more
+CCXCC   invalid
+MMCMM   invalid
+XXIXX   invalid
+//invalid duplicates
+VVI     invalid
+LLX     invalid
+DDL     invalid
+//single
+1       I
+2       II
+3       III
+5       V
+6       VI
+7       VII
+8       VIII
+10      X
+50      L
+100     C
+500     D
+1000    M
+//special cases
+4       IV
+9       IX
+40      XL
+90      XC
+400     CD
+900     CM
+//single
+I       1
+II      2
+III     3
+V       5
+VI      6
+VII     7
+VIII    8
+X       10
+L       50
+C       100
+D       500
+M       1000
+//special cases
+IV      4
+IX      9
+XL      40
+XC      90
+CD      400
+CM      900
+//complex inputs
+3259    MMMCCLIX
+CDXCIX  499
+999     CMXCIX
