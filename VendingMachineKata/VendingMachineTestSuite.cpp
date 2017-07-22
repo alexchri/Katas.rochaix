@@ -27,6 +27,8 @@ int main() {
     selectProducts.WhenColaIsSelectedThenDeductOneDollar();
     selectProducts.WhenChipsIsSelectedThenDeductFiftyCents();
     selectProducts.WhenCandyIsSelectedThenDeductSixtyFiveCents();
+    selectProducts.WhenMultipleItemsAreSelectedThenDeductSumofPrices();
+    
     
     //MAKE CHANGE
     
