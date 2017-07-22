@@ -26,6 +26,13 @@ public:
         assert("PRICE: 0.65" == vendingMachine.checkDisplay());
     }
     
+    void WhenInsertPennyandCheckDisplayTwiceThenChangesfromInvalidtoTotal() {
+        Driver vendingMachine;
+        vendingMachine.insert("Quarter");
+        vendingMachine.insert("Penny");
+        assert("INVALID COIN" == vendingMachine.checkDisplay());
+        assert("0.25" == vendingMachine.checkDisplay());
+    }
 };
 
 #endif /* Header_h */

@@ -15,6 +15,7 @@ int main() {
     //DRIVER
     DriverTest driver;
     driver.WhenSelectCandyandNotEnoughCoinsThenDisplayPrice();
+    driver.WhenInsertPennyandCheckDisplayTwiceThenChangesfromInvalidtoTotal();
     
     //ACCEPT COINS
     AcceptCoinsTest acceptCoins;
@@ -33,7 +34,7 @@ int main() {
     selectProducts.WhenChipsIsSelectedThenDeductFiftyCents();
     selectProducts.WhenCandyIsSelectedThenDeductSixtyFiveCents();
     selectProducts.WhenMultipleItemsAreSelectedThenDeductSumofPrices();
-    
+
     
     //MAKE CHANGE
     
