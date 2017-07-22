@@ -16,6 +16,9 @@ void ReadInsertedCoins::insertCoin(std::string coins) {
     else if(coins == "Dime") {
         runningTotal = 0.10;
     }
+    else if(coins == "Nickel") {
+        runningTotal = 0.05;
+    }
 }
 
 double ReadInsertedCoins::readTotal() {
