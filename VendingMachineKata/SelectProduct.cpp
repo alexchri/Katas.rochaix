@@ -14,13 +14,13 @@ DispenseProduct::DispenseProduct() {
 
 void DispenseProduct::deductPrice(std::string item) {
     if(item == "Cola") {
-        revenue = 1;
+        revenue += 1;
     }
     else if(item == "Chips") {
-        revenue = 0.5;
+        revenue += 0.5;
     }
     else if(item == "Candy") {
-        revenue = 0.65;
+        revenue += 0.65;
     }
 }
 

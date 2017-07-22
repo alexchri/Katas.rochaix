@@ -43,7 +43,7 @@ public:
         selectProduct.deductPrice("Chips");
         assert(1.5 == selectProduct.moneyEarned());
         selectProduct.deductPrice("Candy");
-        assert(1.65 == selectProduct.moneyEarned());
+        assert(2.15 == selectProduct.moneyEarned());
     }
 };
 
