@@ -10,10 +10,11 @@
 #define Header_h
 
 #include <string>
+#include <sstream>
 
 class ReadInsertedCoins {
     double runningTotal = 0;
-    std::string display = "";
+    std::stringstream display;
 public:
     void insertCoin(std::string coins);
     std::string printDisplay();

@@ -19,6 +19,11 @@ void ReadInsertedCoins::insertCoin(std::string coins) {
     else if(coins == "Nickel") {
         runningTotal = 0.05;
     }
+    else {
+        display << "INVALID COIN";
+        return;
+    }
+    display << runningTotal;
 }
 
 double ReadInsertedCoins::readTotal() {
@@ -27,5 +32,5 @@ double ReadInsertedCoins::readTotal() {
 }
 
 std::string ReadInsertedCoins::printDisplay() {
-    return "";
+    return display.str();
 }
