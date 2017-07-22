@@ -15,7 +15,7 @@
 #endif /* SelectProduct_hpp */
 
 class DispenseProduct {
-    
+    double revenue;
 public:
     void deductPrice(std::string item);
     double moneyEarned();

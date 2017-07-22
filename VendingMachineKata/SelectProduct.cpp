@@ -9,10 +9,11 @@
 #include "SelectProduct.h"
 
 void DispenseProduct::deductPrice(std::string item) {
-    //implementation after failed test
+    if(item == "Cola") {
+        revenue = 1;
+    }
 }
 
 double DispenseProduct::moneyEarned() {
-    //implementation after failed test
-    return 0;
+    return revenue;
 }
