@@ -7,10 +7,15 @@
 //
 #include <iostream>
 
+#include "DriverTest.h"
 #include "AcceptCoinsTest.h"
 #include "SelectProductTest.h"
 
 int main() {
+    //DRIVER
+    DriverTest driver;
+    driver.WhenSelectProductandNotEnoughCoinsThenDisplayPrice();
+    
     //ACCEPT COINS
     AcceptCoinsTest acceptCoins;
     acceptCoins.WhenQuarterIsInsertedThenCount25Cents();

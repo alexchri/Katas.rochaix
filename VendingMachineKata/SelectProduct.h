@@ -12,8 +12,6 @@
 #include <stdio.h>
 #include <string>
 
-#endif /* SelectProduct_hpp */
-
 class DispenseProduct {
     double revenue;
 public:
@@ -21,3 +19,7 @@ public:
     void deductPrice(std::string item);
     double moneyEarned();
 };
+
+#endif /* SelectProduct_hpp */
+
+

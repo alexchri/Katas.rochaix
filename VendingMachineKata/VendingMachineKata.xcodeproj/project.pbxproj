@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		128CFF6B1F23F66A0083286A /* SelectProduct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 128CFF671F23EF9B0083286A /* SelectProduct.cpp */; };
 		128CFF6F1F23FA760083286A /* VendingMachineTestSuite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12DC1BD21F218D1700AD9CC3 /* VendingMachineTestSuite.cpp */; };
+		128CFF731F24088C0083286A /* Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 128CFF711F24088C0083286A /* Driver.cpp */; };
 		12DC1BD91F218D3D00AD9CC3 /* AcceptCoins.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12DC1BD81F218D3D00AD9CC3 /* AcceptCoins.cpp */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,9 @@
 		128CFF671F23EF9B0083286A /* SelectProduct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SelectProduct.cpp; sourceTree = "<group>"; };
 		128CFF681F23EF9B0083286A /* SelectProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectProduct.h; sourceTree = "<group>"; };
 		128CFF6A1F23F2630083286A /* SelectProductTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectProductTest.h; sourceTree = "<group>"; };
+		128CFF701F2407D70083286A /* DriverTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DriverTest.h; sourceTree = "<group>"; };
+		128CFF711F24088C0083286A /* Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Driver.cpp; sourceTree = "<group>"; };
+		128CFF721F24088C0083286A /* Driver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Driver.h; sourceTree = "<group>"; };
 		12DC1BC01F2183B700AD9CC3 /* VendingMachineKata */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = VendingMachineKata; sourceTree = BUILT_PRODUCTS_DIR; };
 		12DC1BD21F218D1700AD9CC3 /* VendingMachineTestSuite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VendingMachineTestSuite.cpp; sourceTree = "<group>"; };
 		12DC1BD41F218D2A00AD9CC3 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -52,6 +56,9 @@
 			children = (
 				12DC1BD41F218D2A00AD9CC3 /* main.cpp */,
 				12DC1BD21F218D1700AD9CC3 /* VendingMachineTestSuite.cpp */,
+				128CFF701F2407D70083286A /* DriverTest.h */,
+				128CFF721F24088C0083286A /* Driver.h */,
+				128CFF711F24088C0083286A /* Driver.cpp */,
 				12DC1BD61F218D3000AD9CC3 /* AcceptCoinsTest.h */,
 				12DC1BD71F218D3600AD9CC3 /* AcceptCoins.h */,
 				12DC1BD81F218D3D00AD9CC3 /* AcceptCoins.cpp */,
@@ -130,6 +137,7 @@
 				128CFF6B1F23F66A0083286A /* SelectProduct.cpp in Sources */,
 				12DC1BD91F218D3D00AD9CC3 /* AcceptCoins.cpp in Sources */,
 				128CFF6F1F23FA760083286A /* VendingMachineTestSuite.cpp in Sources */,
+				128CFF731F24088C0083286A /* Driver.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

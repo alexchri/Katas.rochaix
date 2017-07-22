@@ -45,6 +45,7 @@ public:
         selectProduct.deductPrice("Candy");
         assert(2.15 == selectProduct.moneyEarned());
     }
+    
 };
 
 

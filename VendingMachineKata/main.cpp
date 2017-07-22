@@ -8,11 +8,9 @@
 
 #include <iostream>
 
-#include "AcceptCoins.h"
-#include "SelectProduct.h"
+#include "Driver.h"
 
 int main(int argc, const char * argv[]) {
-    DispenseProduct vendingMachine;
-    ReadInsertedCoins coinSlot;
+    
     return 0;
 }
