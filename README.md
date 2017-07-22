@@ -14,18 +14,18 @@ First official commit for this project begins on 22JUL2017.
 NOTE: -please ignore "cleaning" commits - those were used to clean up the repository after a mistake.
 
 Make Commands:
-  make - defaults to make build
-  make build - compile code
-  make test - run test files
-  make clean - clean object files and executables
+	make - defaults to make build
+	make build - compile code
+	make test - run test files
+	make clean - clean object files and executables
 
 Commit comment format: 
-  "STAGE: <TDD stage> FILE: <filename> LINE: <line #>"
+	"STAGE: <TDD stage> FILE: <filename> LINE: <line #>"
 
 TDD stages are defined as follows (based on video from Pillar Technology):
-  WriteFailingTest
-  WritePassingCode
-  Refactor
+	WriteFailingTest
+	WritePassingCode
+	Refactor
 
 File Names format (based on Kata description from Pillar Technology):
 
