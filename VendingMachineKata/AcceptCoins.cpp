@@ -8,27 +8,37 @@
 
 #include "AcceptCoins.h"
 
+ReadInsertedCoins::ReadInsertedCoins() {
+    display << std::fixed << std::setprecision(2);
+}
+
 void ReadInsertedCoins::insertCoin(std::string coins) {
     //minimal code required to pass test
+    
+    display.str("");
+    display.clear();
+    
     if(coins == "Quarter") {
-        runningTotal = 0.25;
+        runningTotal += 0.25;
     }
     else if(coins == "Dime") {
-        runningTotal = 0.10;
+        runningTotal += 0.1;
     }
     else if(coins == "Nickel") {
-        runningTotal = 0.05;
+        runningTotal += 0.05;
     }
     else {
         display << "INVALID COIN";
         return;
     }
+    
     display << runningTotal;
 }
 
 double ReadInsertedCoins::readTotal() {
     //getter class function
-    return runningTotal;
+    int roundToCent = (int)(100 * runningTotal);
+    return (double)roundToCent/100;
 }
 
 std::string ReadInsertedCoins::printDisplay() {
