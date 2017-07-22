@@ -32,10 +32,18 @@ public:
     }
     
     void WhenNickelIsInsertedThenCount5Cents() {
-        //write failing test
+        //test passed!
         ReadInsertedCoins readCoins;
         readCoins.insertCoin("Nickel");
         assert(0.05 == readCoins.readTotal());
+    }
+    
+    void WhenPennyIsInsertedThenDoNotCount() {
+        //write failing test
+        ReadInsertedCoins readCoins;
+        readCoins.insertCoin("Penny");
+        assert(0 == readCoins.readTotal());
+        assert("INVALID COIN" == readCoins.printDisplay());
     }
 };
 

@@ -13,8 +13,10 @@
 
 class ReadInsertedCoins {
     double runningTotal = 0;
+    std::string display = "";
 public:
     void insertCoin(std::string coins);
+    std::string printDisplay();
     double readTotal();
 };
 

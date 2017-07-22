@@ -25,3 +25,7 @@ double ReadInsertedCoins::readTotal() {
     //getter class function
     return runningTotal;
 }
+
+std::string ReadInsertedCoins::printDisplay() {
+    return "";
+}
