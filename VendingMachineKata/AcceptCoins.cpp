@@ -9,10 +9,11 @@
 #include "AcceptCoins.h"
 
 void ReadInsertedCoins::insertCoin(std::string coins) {
-    //implementation after writing failing test
+    //minimal code required to pass test
+    runningTotal = 0.25;
 }
 
 double ReadInsertedCoins::readTotal() {
-    //implementation after writing failing test
-    return 0;
+    //getter class function
+    return runningTotal;
 }

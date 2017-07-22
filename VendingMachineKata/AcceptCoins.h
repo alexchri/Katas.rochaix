@@ -12,7 +12,7 @@
 #include <string>
 
 class ReadInsertedCoins {
-    
+    double runningTotal = 0;
 public:
     void insertCoin(std::string coins);
     double readTotal();
