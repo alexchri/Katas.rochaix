@@ -75,9 +75,15 @@ public:
     }
     
     void WhenNoCoinsInsertedThenDisplayInsertCoin() {
-        //write failing test
+        //test passed!
         ReadInsertedCoins readCoins;
         assert("INSERT COIN" == readCoins.printDisplay());
+    }
+    
+    void WhenPennyIsInsertedThenCoinReturnisOneCent() {
+        //write failing test
+        ReadInsertedCoins readCoins;
+        assert(0.01 == readCoins.rejectedCoins());
     }
     
 };

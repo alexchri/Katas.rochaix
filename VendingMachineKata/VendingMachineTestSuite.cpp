@@ -18,6 +18,7 @@ int main() {
     acceptCoins.WhenPennyIsInsertedThenDoNotCount();
     acceptCoins.WhenMultipleCoinsAreInsertedThenCountSum();
     acceptCoins.WhenNoCoinsInsertedThenDisplayInsertCoin();
+    acceptCoins.WhenPennyIsInsertedThenCoinReturnisOneCent();
     
     //SELECT PRODUCT
     

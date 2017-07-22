@@ -15,6 +15,7 @@
 
 class ReadInsertedCoins {
     double runningTotal = 0;
+    double rejectedTotal = 0;
     std::stringstream display;
     
 public:
@@ -22,6 +23,7 @@ public:
     void insertCoin(std::string coins);
     std::string printDisplay();
     double readTotal();
+    double rejectedCoins();
 };
 
 #endif /* Header_h */

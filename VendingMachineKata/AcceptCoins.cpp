@@ -42,6 +42,10 @@ double ReadInsertedCoins::readTotal() {
     return (double)roundToCent/100;
 }
 
+double ReadInsertedCoins::rejectedCoins() {
+    return 0;
+}
+
 std::string ReadInsertedCoins::printDisplay() {
     return display.str();
 }
