@@ -16,6 +16,7 @@ int main() {
     acceptCoins.WhenDimeIsInsertedThenCount10Cents();
     acceptCoins.WhenNickelIsInsertedThenCount5Cents();
     acceptCoins.WhenPennyIsInsertedThenDoNotCount();
+    acceptCoins.WhenMultipleCoinsAreInsertedThenCountSum();
     
     //SELECT PRODUCT
     

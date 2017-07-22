@@ -45,6 +45,34 @@ public:
         assert(0 == readCoins.readTotal());
         assert("INVALID COIN" == readCoins.printDisplay());
     }
+    
+    void WhenMultipleCoinsAreInsertedThenCountSum() {
+        //write failing test
+        
+        //Quarter, Nickel, Dime, and Penny
+        
+        ReadInsertedCoins readCoins;
+        
+        readCoins.insertCoin("Quarter");
+        //runningTotal = .25
+        assert(0.25 == readCoins.readTotal());
+        assert("0.25" == readCoins.printDisplay());
+        
+        readCoins.insertCoin("Dime");
+        //runningTotal = .25 + .10 = .35
+        assert(0.35 == readCoins.readTotal());
+        assert("0.35" == readCoins.printDisplay());
+        
+        readCoins.insertCoin("Nickel");
+        //runningTotal = .25 + .10 + .05 = .40
+        assert(0.40 == readCoins.readTotal());
+        assert("0.40" == readCoins.printDisplay());
+        
+        readCoins.insertCoin("Penny");
+        //Should equal = .25 + .10 + .05 + invalid = .40
+        assert(0.40 == readCoins.readTotal());
+        assert("INVALID COIN" == readCoins.printDisplay());
+    }
 };
 
 #endif /* AcceptCoins_hpp */
