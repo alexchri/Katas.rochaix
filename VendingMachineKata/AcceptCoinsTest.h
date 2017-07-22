@@ -24,7 +24,7 @@ public:
     }
     
     void WhenDimeIsInsertedThenCount10Cents() {
-        
+        //write failing test
     }
 };
 
