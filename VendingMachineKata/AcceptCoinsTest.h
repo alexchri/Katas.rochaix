@@ -18,6 +18,7 @@ class AcceptCoinsTest {
     
 public:
     void WhenQuarterIsInsertedThenCount25Cents() {
+        //write failing test
         ReadInsertedCoins readCoins;
         readCoins.insertCoin("Quarter");
         assert(0.25 == readCoins.readTotal());
