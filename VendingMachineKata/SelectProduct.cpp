@@ -12,6 +12,9 @@ void DispenseProduct::deductPrice(std::string item) {
     if(item == "Cola") {
         revenue = 1;
     }
+    else if(item == "Chips") {
+        revenue = 0.5;
+    }
 }
 
 double DispenseProduct::moneyEarned() {
