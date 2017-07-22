@@ -10,6 +10,7 @@
 
 ReadInsertedCoins::ReadInsertedCoins() {
     display << std::fixed << std::setprecision(2);
+    display << "INSERT COIN";
 }
 
 void ReadInsertedCoins::insertCoin(std::string coins) {

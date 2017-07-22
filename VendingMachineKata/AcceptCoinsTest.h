@@ -76,7 +76,6 @@ public:
     
     void WhenNoCoinsInsertedThenDisplayInsertCoin() {
         //write failing test
-        
         ReadInsertedCoins readCoins;
         assert("INSERT COIN" == readCoins.printDisplay());
     }
