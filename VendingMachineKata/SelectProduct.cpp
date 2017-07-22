@@ -8,6 +8,10 @@
 
 #include "SelectProduct.h"
 
+DispenseProduct::DispenseProduct() {
+    revenue = 0;
+}
+
 void DispenseProduct::deductPrice(std::string item) {
     if(item == "Cola") {
         revenue = 1;

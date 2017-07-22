@@ -11,6 +11,8 @@
 ReadInsertedCoins::ReadInsertedCoins() {
     display << std::fixed << std::setprecision(2);
     display << "INSERT COIN";
+    runningTotal = 0;
+    rejectedTotal = 0;
 }
 
 void ReadInsertedCoins::insertCoin(std::string coins) {

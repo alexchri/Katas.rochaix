@@ -17,6 +17,7 @@
 class DispenseProduct {
     double revenue;
 public:
+    DispenseProduct();
     void deductPrice(std::string item);
     double moneyEarned();
 };

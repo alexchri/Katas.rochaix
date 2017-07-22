@@ -14,8 +14,8 @@
 #include <iomanip>
 
 class ReadInsertedCoins {
-    double runningTotal = 0;
-    double rejectedTotal = 0;
+    double runningTotal;
+    double rejectedTotal;
     std::stringstream display;
     
 public:
