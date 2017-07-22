@@ -20,6 +20,12 @@ public:
         selectProduct.deductPrice("Cola");
         assert(1 == selectProduct.moneyEarned());
     }
+    
+    void WhenChipsIsSelectedThenDeductFiftyCents() {
+        DispenseProduct selectProduct;
+        selectProduct.deductPrice("Chips");
+        assert(0.50 == selectProduct.moneyEarned());
+    }
 };
 
 

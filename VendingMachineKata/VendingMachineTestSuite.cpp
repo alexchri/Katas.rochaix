@@ -25,6 +25,7 @@ int main() {
     //SELECT PRODUCT
     SelectProductTest selectProducts;
     selectProducts.WhenColaIsSelectedThenDeductOneDollar();
+    selectProducts.WhenChipsIsSelectedThenDeductFiftyCents();
     
     //MAKE CHANGE
     
