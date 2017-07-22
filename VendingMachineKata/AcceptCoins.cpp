@@ -10,7 +10,12 @@
 
 void ReadInsertedCoins::insertCoin(std::string coins) {
     //minimal code required to pass test
-    runningTotal = 0.25;
+    if(coins == "Quarter") {
+        runningTotal = 0.25;
+    }
+    else if(coins == "Dime") {
+        runningTotal = 0.10;
+    }
 }
 
 double ReadInsertedCoins::readTotal() {
