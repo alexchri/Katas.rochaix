@@ -13,6 +13,7 @@ int main() {
     //ACCEPT COINS
     AcceptCoinsTest acceptCoins;
     acceptCoins.WhenQuarterIsInsertedThenCount25Cents();
+    acceptCoins.WhenDimeIsInsertedThenCount10Cents();
     
     //SELECT PRODUCT
     

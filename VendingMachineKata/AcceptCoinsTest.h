@@ -15,12 +15,20 @@
 
 
 class AcceptCoinsTest {
-    ReadInsertedCoins readCoins;
+    
 public:
     void WhenQuarterIsInsertedThenCount25Cents() {
         //test passed!
+        ReadInsertedCoins readCoins;
         readCoins.insertCoin("Quarter");
         assert(0.25 == readCoins.readTotal());
+    }
+    
+    void WhenDimeIsInsertedThenCount10Cents() {
+        //write failing test
+        ReadInsertedCoins readCoins;
+        readCoins.insertCoin("Dime");
+        assert(0.10 == readCoins.readTotal());
     }
 };
 
