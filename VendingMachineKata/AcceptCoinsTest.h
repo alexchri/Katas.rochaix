@@ -83,6 +83,7 @@ public:
     void WhenPennyIsInsertedThenCoinReturnisOneCent() {
         //write failing test
         ReadInsertedCoins readCoins;
+        readCoins.insertCoin("Penny");
         assert(0.01 == readCoins.rejectedCoins());
     }
     

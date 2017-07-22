@@ -30,6 +30,7 @@ void ReadInsertedCoins::insertCoin(std::string coins) {
     }
     else {
         display << "INVALID COIN";
+        rejectedTotal += 0.01;
         return;
     }
     
@@ -43,7 +44,7 @@ double ReadInsertedCoins::readTotal() {
 }
 
 double ReadInsertedCoins::rejectedCoins() {
-    return 0;
+    return rejectedTotal;
 }
 
 std::string ReadInsertedCoins::printDisplay() {
