@@ -22,10 +22,6 @@ public:
         readCoins.insertCoin("Quarter");
         assert(0.25 == readCoins.readTotal());
     }
-    
-    void WhenDimeIsInsertedThenCount10Cents() {
-        //write failing tests
-    }
 };
 
 #endif /* AcceptCoins_hpp */
