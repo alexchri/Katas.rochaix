@@ -22,7 +22,7 @@ Make Commands:
 
 Commit comment format: 
 
-	"STAGE: <TDD stage> FILE: <filename> LINE: <line #>"
+    "STAGE: <TDD stage> FILE: <filename> LINE: <line #> FUNCTION: <function name>"
 
 TDD stages are defined as follows (based on video from Pillar Technology):
 
