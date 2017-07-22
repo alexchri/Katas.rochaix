@@ -13,13 +13,15 @@
 #include "SelectProduct.h"
 
 #include <stdio.h>
+
 class Driver {
+    std::string display;
     DispenseProduct vendingMachine;
     ReadInsertedCoins coinSlot;
 public:
     void insert(std::string coin);
     void select(std::string item);
     void coinReturn();
-    std::string display();
+    std::string checkDisplay();
 };
 #endif /* Driver_hpp */

@@ -14,7 +14,7 @@
 int main() {
     //DRIVER
     DriverTest driver;
-    driver.WhenSelectProductandNotEnoughCoinsThenDisplayPrice();
+    driver.WhenSelectCandyandNotEnoughCoinsThenDisplayPrice();
     
     //ACCEPT COINS
     AcceptCoinsTest acceptCoins;

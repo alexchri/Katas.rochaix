@@ -18,13 +18,14 @@
 class DriverTest {
     
 public:
-    void WhenSelectProductandNotEnoughCoinsThenDisplayPrice() {
+    void WhenSelectCandyandNotEnoughCoinsThenDisplayPrice() {
         Driver vendingMachine;
         vendingMachine.insert("Quarter");
         vendingMachine.insert("Quarter");
         vendingMachine.select("Candy");
-        assert("PRICE: 0.65" == vendingMachine.display());
+        assert("PRICE: 0.65" == vendingMachine.checkDisplay());
     }
+    
 };
 
 #endif /* Header_h */
