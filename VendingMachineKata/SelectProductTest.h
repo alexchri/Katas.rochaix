@@ -26,6 +26,12 @@ public:
         selectProduct.deductPrice("Chips");
         assert(0.50 == selectProduct.moneyEarned());
     }
+    
+    void WhenCandyIsSelectedThenDeductSixtyFiveCents() {
+        DispenseProduct selectProduct;
+        selectProduct.deductPrice("Candy");
+        assert(0.65 == selectProduct.moneyEarned());
+    }
 };
 
 
