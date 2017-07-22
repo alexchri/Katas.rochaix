@@ -39,7 +39,7 @@ public:
     }
     
     void WhenPennyIsInsertedThenDoNotCount() {
-        //write failing test
+        //test passed!
         ReadInsertedCoins readCoins;
         readCoins.insertCoin("Penny");
         assert(0 == readCoins.readTotal());
@@ -47,7 +47,7 @@ public:
     }
     
     void WhenMultipleCoinsAreInsertedThenCountSum() {
-        //write failing test
+        //test passed!
         
         //Quarter, Nickel, Dime, and Penny
         
@@ -73,6 +73,14 @@ public:
         assert(0.40 == readCoins.readTotal());
         assert("INVALID COIN" == readCoins.printDisplay());
     }
+    
+    void WhenNoCoinsInsertedThenDisplayInsertCoin() {
+        //write failing test
+        
+        ReadInsertedCoins readCoins;
+        assert("INSERT COIN" == readCoins.printDisplay());
+    }
+    
 };
 
 #endif /* AcceptCoins_hpp */

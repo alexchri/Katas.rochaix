@@ -16,6 +16,7 @@
 class ReadInsertedCoins {
     double runningTotal = 0;
     std::stringstream display;
+    
 public:
     ReadInsertedCoins();
     void insertCoin(std::string coins);
