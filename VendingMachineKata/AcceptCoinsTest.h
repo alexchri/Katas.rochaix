@@ -25,10 +25,17 @@ public:
     }
     
     void WhenDimeIsInsertedThenCount10Cents() {
-        //write failing test
+        //test passed!
         ReadInsertedCoins readCoins;
         readCoins.insertCoin("Dime");
         assert(0.10 == readCoins.readTotal());
+    }
+    
+    void WhenNickelIsInsertedThenCount5Cents() {
+        //write failing test
+        ReadInsertedCoins readCoins;
+        readCoins.insertCoin("Nickel");
+        assert(0.05 == readCoins.readTotal());
     }
 };
 
