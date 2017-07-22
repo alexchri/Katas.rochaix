@@ -1,13 +1,13 @@
 //
-//  Header.h
+//  AcceptCoins.h
 //  VendingMachineKata
 //
 //  Created by Alexandre Rochaix on 7/20/17.
 //
 //
 
-#ifndef Header_h
-#define Header_h
+#ifndef AcceptCoins_h
+#define AcceptCoins_h
 
 #include <string>
 #include <sstream>

@@ -8,8 +8,11 @@
 
 #include <iostream>
 
+#include "AcceptCoins.h"
+#include "SelectProduct.h"
+
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    DispenseProduct vendingMachine;
+    ReadInsertedCoins coinSlot;
     return 0;
 }

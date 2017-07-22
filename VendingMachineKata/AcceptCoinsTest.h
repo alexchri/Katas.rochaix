@@ -1,18 +1,17 @@
 //
-//  AcceptCoins.h
+//  AcceptCoinsTest.h
 //  VendingMachineKata
 //
 //  Created by Alexandre Rochaix on 7/20/17.
 //
 //
 
-#ifndef AcceptCoins_hpp
-#define AcceptCoins_hpp
+#ifndef AcceptCoinsTest_h
+#define AcceptCoinsTest_h
 
 #include <stdio.h>
 #include <cassert>
 #include "AcceptCoins.h"
-
 
 class AcceptCoinsTest {
     

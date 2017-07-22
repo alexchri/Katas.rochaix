@@ -8,6 +8,7 @@
 #include <iostream>
 
 #include "AcceptCoinsTest.h"
+#include "SelectProductTest.h"
 
 int main() {
     //ACCEPT COINS
@@ -22,7 +23,8 @@ int main() {
     acceptCoins.WhenManyPenniesAreInsertedThenCoinReturnisSumofPenniesInserted();
     
     //SELECT PRODUCT
-    
+    SelectProductTest selectProducts;
+    selectProducts.WhenColaIsSelectedThenDeductOneDollar();
     
     //MAKE CHANGE
     
