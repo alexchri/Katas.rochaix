@@ -81,10 +81,24 @@ public:
     }
     
     void WhenPennyIsInsertedThenCoinReturnisOneCent() {
-        //write failing test
+        //test passed!
         ReadInsertedCoins readCoins;
         readCoins.insertCoin("Penny");
         assert(0.01 == readCoins.rejectedCoins());
+    }
+    
+    void WhenManyPenniesAreInsertedThenCoinReturnisSumofPenniesInserted() {
+        //test passed!
+        ReadInsertedCoins readCoins;
+        
+        //4 Pennies
+        
+        readCoins.insertCoin("Penny");
+        readCoins.insertCoin("Penny");
+        readCoins.insertCoin("Penny");
+        readCoins.insertCoin("Penny");
+        
+        assert(0.04 == readCoins.rejectedCoins());
     }
     
 };
