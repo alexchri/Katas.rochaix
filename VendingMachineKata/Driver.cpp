@@ -11,38 +11,26 @@
 #include <sstream>
 #include <utility>
 
+Driver::Driver() {
+    machine.stockMachine();
+}
+
 void Driver::insert(std::string coin) {
     coinSlot.insertCoin(coin);
     display = coinSlot.printDisplay();
 }
 
 void Driver::select(std::string item) {
-    if(item == "Cola") {
-        if(coinSlot.readTotal() >= 1) {
-            display = "THANK YOU";
-            coinSlot.transaction(1);
-        }
-        else {
-            display = "PRICE: 0.65";
-        }
+    SnackItem snack = machine.findItem(item);
+    
+    if(coinSlot.readTotal() >= snack.getPrice()) {
+        display = "THANK YOU";
+        coinSlot.transaction(snack.getPrice());
     }
-    else if(item == "Chips") {
-        if(coinSlot.readTotal() >= 0.5) {
-            display = "THANK YOU";
-            coinSlot.transaction(0.5);
-        }
-        else {
-            display = "PRICE: 0.65";
-        }
-    }
-    else if(item == "Candy") {
-        if(coinSlot.readTotal() >= 0.65) {
-            display = "THANK YOU";
-            coinSlot.transaction(0.65);
-        }
-        else {
-            display = "PRICE: 0.65";
-        }
+    else {
+        std::stringstream read;
+        read << "PRICE: " << snack.getPrice();
+        display = read.str();
     }
 }
 

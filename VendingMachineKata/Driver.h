@@ -9,16 +9,18 @@
 #ifndef Driver_hpp
 #define Driver_hpp
 
+#include "ItemsAndMachine.h"
 #include "AcceptCoins.h"
-#include "SelectProduct.h"
+
 
 #include <stdio.h>
 
 class Driver {
+    Machine machine;
     std::string display;
-    DispenseProduct vendingMachine;
     ReadInsertedCoins coinSlot;
 public:
+    Driver();
     void insert(std::string coin);
     void select(std::string item);
     void coinReturn();

@@ -8,8 +8,8 @@
 #include <iostream>
 
 #include "DriverTest.h"
+#include "ItemsAndMachine.h"
 #include "AcceptCoinsTest.h"
-#include "SelectProductTest.h"
 
 int main() {
     //DRIVER
@@ -30,12 +30,7 @@ int main() {
     acceptCoins.WhenManyPenniesAreInsertedThenCoinReturnisSumofPenniesInserted();
     
     //SELECT PRODUCT
-    SelectProductTest selectProducts;
-    selectProducts.WhenColaIsSelectedThenDeductOneDollar();
-    selectProducts.WhenChipsIsSelectedThenDeductFiftyCents();
-    selectProducts.WhenCandyIsSelectedThenDeductSixtyFiveCents();
-    selectProducts.WhenMultipleItemsAreSelectedThenDeductSumofPrices();
-
+    
     
     //MAKE CHANGE
     

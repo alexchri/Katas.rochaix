@@ -13,7 +13,6 @@
 
 #include "Driver.h"
 #include "AcceptCoins.h"
-#include "SelectProduct.h"
 
 class DriverTest {
     
