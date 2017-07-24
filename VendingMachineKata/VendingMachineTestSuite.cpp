@@ -15,8 +15,10 @@ int main() {
     //DRIVER
     DriverTest driver;
     driver.WhenSelectCandyandNotEnoughCoinsThenDisplayPrice();
+    driver.WhenSelectChipsAndNotEnoughCoinsThenDisplayPrice();
     driver.WhenInsertPennyandCheckDisplayTwiceThenChangesfromInvalidtoTotal();
     driver.WhenInsertExactCorrectAmountThenResetToZeroAndPrintInsertCoin();
+    driver.WhenSelectColaAndNotEnoughCoinsThenDisplayPrice();
     
     //ACCEPT COINS
     AcceptCoinsTest acceptCoins;
@@ -30,7 +32,6 @@ int main() {
     acceptCoins.WhenManyPenniesAreInsertedThenCoinReturnisSumofPenniesInserted();
     
     //SELECT PRODUCT
-    
     
     //MAKE CHANGE
     

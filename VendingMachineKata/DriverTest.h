@@ -25,6 +25,24 @@ public:
         assert("PRICE: 0.65" == vendingMachine.checkDisplay());
     }
     
+    void WhenSelectChipsAndNotEnoughCoinsThenDisplayPrice() {
+        Driver vendingMachine;
+        vendingMachine.insert("Quarter");
+        vendingMachine.insert("Dime");
+        vendingMachine.select("Chips");
+        assert("PRICE: 0.5" == vendingMachine.checkDisplay());
+    }
+    
+    void WhenSelectColaAndNotEnoughCoinsThenDisplayPrice() {
+        Driver vendingMachine;
+        vendingMachine.insert("Quarter");
+        vendingMachine.insert("Quarter");
+        vendingMachine.insert("Dime");
+        vendingMachine.insert("Quarter");
+        vendingMachine.select("Cola");
+        assert("PRICE: 1" == vendingMachine.checkDisplay());
+    }
+    
     void WhenInsertPennyandCheckDisplayTwiceThenChangesfromInvalidtoTotal() {
         Driver vendingMachine;
         vendingMachine.insert("Quarter");
@@ -41,6 +59,7 @@ public:
         assert("THANK YOU" == vendingMachine.checkDisplay());
         assert("INSERT COIN" == vendingMachine.checkDisplay());
     }
+
 };
 
 #endif /* Header_h */
