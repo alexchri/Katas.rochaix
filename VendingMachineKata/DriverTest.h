@@ -51,11 +51,33 @@ public:
         assert("0.25" == vendingMachine.checkDisplay());
     }
     
-    void WhenInsertExactCorrectAmountThenResetToZeroAndPrintInsertCoin() {
+    void WhenInsertExactCorrectAmountForChipsThenResetToZeroAndPrintInsertCoin() {
         Driver vendingMachine;
         vendingMachine.insert("Quarter");
         vendingMachine.insert("Quarter");
         vendingMachine.select("Chips");
+        assert("THANK YOU" == vendingMachine.checkDisplay());
+        assert("INSERT COIN" == vendingMachine.checkDisplay());
+    }
+    
+    void WhenInsertExactCorrectAmountForCandyThenResetToZeroAndPrintInsertCoin() {
+        Driver vendingMachine;
+        vendingMachine.insert("Quarter");
+        vendingMachine.insert("Quarter");
+        vendingMachine.insert("Dime");
+        vendingMachine.insert("Nickel");
+        vendingMachine.select("Candy");
+        assert("THANK YOU" == vendingMachine.checkDisplay());
+        assert("INSERT COIN" == vendingMachine.checkDisplay());
+    }
+    
+    void WhenInsertExactCorrectAmountForColaThenResetToZeroAndPrintInsertCoin() {
+        Driver vendingMachine;
+        vendingMachine.insert("Quarter");
+        vendingMachine.insert("Quarter");
+        vendingMachine.insert("Quarter");
+        vendingMachine.insert("Quarter");
+        vendingMachine.select("Cola");
         assert("THANK YOU" == vendingMachine.checkDisplay());
         assert("INSERT COIN" == vendingMachine.checkDisplay());
     }

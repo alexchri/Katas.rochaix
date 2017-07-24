@@ -14,11 +14,14 @@
 int main() {
     //DRIVER
     DriverTest driver;
+    driver.WhenSelectColaAndNotEnoughCoinsThenDisplayPrice();
     driver.WhenSelectCandyandNotEnoughCoinsThenDisplayPrice();
     driver.WhenSelectChipsAndNotEnoughCoinsThenDisplayPrice();
     driver.WhenInsertPennyandCheckDisplayTwiceThenChangesfromInvalidtoTotal();
-    driver.WhenInsertExactCorrectAmountThenResetToZeroAndPrintInsertCoin();
-    driver.WhenSelectColaAndNotEnoughCoinsThenDisplayPrice();
+    driver.WhenInsertExactCorrectAmountForChipsThenResetToZeroAndPrintInsertCoin();
+    driver.WhenInsertExactCorrectAmountForCandyThenResetToZeroAndPrintInsertCoin();
+    driver.WhenInsertExactCorrectAmountForColaThenResetToZeroAndPrintInsertCoin();
+    
     
     //ACCEPT COINS
     AcceptCoinsTest acceptCoins;
