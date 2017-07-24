@@ -37,7 +37,7 @@ int main() {
     //SELECT PRODUCT
     
     //MAKE CHANGE
-    
+    acceptCoins.WhenOneDollarInsertedAndCandySelectedThenMakeChangeForThirtyFiveCents();
     
     //RETURN COINS
     

@@ -100,6 +100,22 @@ public:
         assert(0.04 == readCoins.rejectedCoins());
     }
     
+    void WhenOneDollarInsertedAndCandySelectedThenMakeChangeForThirtyFiveCents() {
+        ReadInsertedCoins readCoins;
+        
+        //insert 1 dollar
+        readCoins.insertCoin("Quarter");
+        readCoins.insertCoin("Quarter");
+        readCoins.insertCoin("Quarter");
+        readCoins.insertCoin("Quarter");
+        
+        //select Candy
+        readCoins.transaction(0.65);
+        
+        //check change made
+        assert(0.35 == readCoins.rejectedCoins());
+        assert("INSERT COIN" == readCoins.printDisplay());
+    }
 };
 
 #endif /* AcceptCoins_hpp */
