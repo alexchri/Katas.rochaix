@@ -16,6 +16,7 @@ int main() {
     DriverTest driver;
     driver.WhenSelectCandyandNotEnoughCoinsThenDisplayPrice();
     driver.WhenInsertPennyandCheckDisplayTwiceThenChangesfromInvalidtoTotal();
+    driver.WhenInsertExactCorrectAmountThenResetToZeroAndPrintInsertCoin();
     
     //ACCEPT COINS
     AcceptCoinsTest acceptCoins;

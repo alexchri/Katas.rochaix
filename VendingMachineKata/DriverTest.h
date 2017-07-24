@@ -33,6 +33,15 @@ public:
         assert("INVALID COIN" == vendingMachine.checkDisplay());
         assert("0.25" == vendingMachine.checkDisplay());
     }
+    
+    void WhenInsertExactCorrectAmountThenResetToZeroAndPrintInsertCoin() {
+        Driver vendingMachine;
+        vendingMachine.insert("Quarter");
+        vendingMachine.insert("Quarter");
+        vendingMachine.select("Chips");
+        assert("THANK YOU" == vendingMachine.checkDisplay());
+        assert("INSERT COIN" == vendingMachine.checkDisplay());
+    }
 };
 
 #endif /* Header_h */
