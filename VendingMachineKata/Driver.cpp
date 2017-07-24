@@ -9,6 +9,7 @@
 #include "Driver.h"
 
 #include <sstream>
+#include <utility>
 
 void Driver::insert(std::string coin) {
     coinSlot.insertCoin(coin);
@@ -17,16 +18,31 @@ void Driver::insert(std::string coin) {
 
 void Driver::select(std::string item) {
     if(item == "Cola") {
-        
+        if(coinSlot.readTotal() >= 1) {
+            display = "THANK YOU";
+            coinSlot.transaction(1);
+        }
+        else {
+            display = "PRICE: 0.65";
+        }
     }
     else if(item == "Chips") {
-        
+        if(coinSlot.readTotal() >= 0.5) {
+            display = "THANK YOU";
+            coinSlot.transaction(0.5);
+        }
+        else {
+            display = "PRICE: 0.65";
+        }
     }
     else if(item == "Candy") {
-        if(coinSlot.readTotal() >= 0.65)
+        if(coinSlot.readTotal() >= 0.65) {
             display = "THANK YOU";
-        else
+            coinSlot.transaction(0.65);
+        }
+        else {
             display = "PRICE: 0.65";
+        }
     }
 }
 

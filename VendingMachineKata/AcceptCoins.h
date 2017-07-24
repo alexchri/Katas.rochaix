@@ -20,7 +20,12 @@ class ReadInsertedCoins {
     
 public:
     ReadInsertedCoins();
+    
+    //setter
     void insertCoin(std::string coins);
+    void transaction(double price);
+    
+    //getter
     std::string printDisplay();
     double readTotal();
     double rejectedCoins();

@@ -39,6 +39,12 @@ void ReadInsertedCoins::insertCoin(std::string coins) {
     display << runningTotal;
 }
 
+void ReadInsertedCoins::transaction(double price) {
+    runningTotal -= price;
+    rejectedTotal = runningTotal;
+    runningTotal = 0;
+}
+
 double ReadInsertedCoins::readTotal() {
     //getter class function
     int roundToCent = (int)(100 * runningTotal);
@@ -56,6 +62,14 @@ std::string ReadInsertedCoins::printDisplay() {
         display.clear();
         display << runningTotal;
         return "INVALID COIN";
+    }
+    display.str("");
+    display.clear();
+    if(runningTotal == 0) {
+        display << "INSERT COIN";
+    }
+    else {
+        display << runningTotal;
     }
     return display.str();
 }
