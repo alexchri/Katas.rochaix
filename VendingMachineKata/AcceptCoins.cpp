@@ -65,6 +65,7 @@ std::string ReadInsertedCoins::printDisplay() {
         display << "INSERT COIN";
     else
         display << runningTotal;
+    
     if(temp == "INVALID COIN")
         return "INVALID COIN";
     
