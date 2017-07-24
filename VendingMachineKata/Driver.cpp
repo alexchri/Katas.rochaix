@@ -39,6 +39,7 @@ void Driver::coinReturn() {
 }
 
 std::string Driver::checkDisplay() {
+    //print current and refresh display in background
     std::string refresh = display;
     display = coinSlot.printDisplay();
     return refresh;
