@@ -35,11 +35,7 @@ void Driver::coinReturn() {
 }
 
 std::string Driver::checkDisplay() {
-    if(display == "INVALID COIN") {
-        std::stringstream read;
-        read << coinSlot.readTotal();
-        display = read.str();
-        return "INVALID COIN";
-    }
-    return display;
+    std::string refresh = display;
+    display = coinSlot.printDisplay();
+    return refresh;
 }

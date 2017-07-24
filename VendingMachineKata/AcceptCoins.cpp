@@ -51,5 +51,11 @@ double ReadInsertedCoins::rejectedCoins() {
 }
 
 std::string ReadInsertedCoins::printDisplay() {
+    if(display.str() == "INVALID COIN") {
+        display.str("");
+        display.clear();
+        display << runningTotal;
+        return "INVALID COIN";
+    }
     return display.str();
 }
