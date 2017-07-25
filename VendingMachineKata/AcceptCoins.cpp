@@ -8,11 +8,77 @@
 
 #include "AcceptCoins.h"
 
+CoinCounter::CoinCounter() {
+    //coin slot
+    coinSlot.numQuarters = 0;
+    coinSlot.numDimes = 0;
+    coinSlot.numNickels = 0;
+    //coins available for change from machine
+    changeAvailable.numQuarters = 0;
+    changeAvailable.numDimes = 0;
+    changeAvailable.numNickels = 0;
+    //coin return
+    coinReturn.numQuarters = 0;
+    coinReturn.numDimes = 0;
+    coinReturn.numNickels = 0;
+    coinReturn.numPennies = 0;
+}
+
+void CoinCounter::stockWithChange(int numOfEachCoin) {
+    //default of 5 coins
+    changeAvailable.numQuarters += numOfEachCoin;
+    changeAvailable.numDimes += numOfEachCoin;
+    changeAvailable.numNickels += numOfEachCoin;
+}
+
+void CoinCounter::insertQuarter() {
+    ++coinSlot.numQuarters;
+}
+
+void CoinCounter::insertDime() {
+    ++coinSlot.numDimes;
+}
+
+void CoinCounter::insertNickel() {
+    ++coinSlot.numNickels;
+}
+
+void CoinCounter::insertPenny() {
+    ++coinReturn.numPennies;
+}
+
+double CoinCounter::getRunningTotal() {
+    return 0.25*coinSlot.numQuarters + 0.10*coinSlot.numDimes
+        + 0.05*coinSlot.numNickels;
+}
+
+double CoinCounter::getChangeMade() {
+    return 0.25*coinReturn.numQuarters + 0.10*coinReturn.numDimes
+        + 0.05*coinReturn.numNickels + 0.01*coinReturn.numPennies;
+}
+
+void CoinCounter::acceptCoins() {
+    //accept coins
+    changeAvailable.numQuarters += coinSlot.numQuarters;
+    changeAvailable.numDimes += coinSlot.numDimes;
+    changeAvailable.numNickels += coinSlot.numNickels;
+    //reset
+    coinSlot.numQuarters = coinSlot.numDimes = coinSlot.numNickels = 0;
+}
+
+void CoinCounter::makeChangeFor(double amount) {
+    //make change for <amount>
+
+}
+
 ReadInsertedCoins::ReadInsertedCoins() {
     display << std::fixed << std::setprecision(2);
     display << "INSERT COIN";
-    runningTotal = 0;
-    rejectedTotal = 0;
+    CoinCounter();
+}
+
+void ReadInsertedCoins::stockWithCoin() {
+    machine.stockWithChange(5);
 }
 
 void ReadInsertedCoins::insertCoin(std::string coins) {
@@ -22,37 +88,38 @@ void ReadInsertedCoins::insertCoin(std::string coins) {
     display.clear();
     
     if(coins == "Quarter") {
-        runningTotal += 0.25;
+        machine.insertQuarter();
     }
     else if(coins == "Dime") {
-        runningTotal += 0.1;
+        machine.insertDime();
     }
     else if(coins == "Nickel") {
-        runningTotal += 0.05;
+        machine.insertNickel();
     }
     else {
         display << "INVALID COIN";
-        rejectedTotal += 0.01;
+        machine.insertPenny();
         return;
     }
     
-    display << runningTotal;
+    display << machine.getRunningTotal();
 }
 
 void ReadInsertedCoins::transaction(double price) {
-    runningTotal -= price;
-    rejectedTotal = runningTotal;
-    runningTotal = 0;
+    //double changeToMake = machine.getRunningTotal() - price;
+    //machine swallows coins
+    machine.acceptCoins();
+    
 }
 
 double ReadInsertedCoins::readTotal() {
     //getter class function
-    int roundToCent = (int)(100 * runningTotal);
+    int roundToCent = (int)(100 * machine.getRunningTotal());
     return (double)roundToCent/100;
 }
 
 double ReadInsertedCoins::rejectedCoins() {
-    int roundToCent = (int)(100 * rejectedTotal);
+    int roundToCent = (int)(100 * machine.getChangeMade());
     return (double)roundToCent/100;
 }
 
@@ -61,10 +128,10 @@ std::string ReadInsertedCoins::printDisplay() {
     display.str("");
     display.clear();
     
-    if(runningTotal == 0)
+    if(machine.getRunningTotal() == 0)
         display << "INSERT COIN";
     else
-        display << runningTotal;
+        display << machine.getRunningTotal();
     
     if(temp == "INVALID COIN")
         return "INVALID COIN";

@@ -37,7 +37,7 @@ int main() {
     //SELECT PRODUCT
     
     //MAKE CHANGE
-    acceptCoins.WhenOneDollarInsertedAndCandySelectedThenMakeChangeForThirtyFiveCents();
+    //acceptCoins.WhenOneDollarInsertedAndCandySelectedThenMakeChangeForThirtyFiveCents();
     
     //RETURN COINS
     

@@ -12,7 +12,8 @@
 #include <utility>
 
 Driver::Driver() {
-    machine.stockMachine();
+    machine.stockWithSnack();
+    coinSlot.stockWithCoin();
 }
 
 void Driver::insert(std::string coin) {

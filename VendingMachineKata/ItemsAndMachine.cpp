@@ -30,7 +30,7 @@ Machine::Machine() {
     machine.emplace_back(SnackItem("ERROR", 0));
 }
 
-void Machine::stockMachine() {
+void Machine::stockWithSnack() {
     //insert items list here!
     machine.emplace_back(SnackItem("Cola", 1));
     machine.emplace_back(SnackItem("Chips", 0.5));

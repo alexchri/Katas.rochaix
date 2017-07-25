@@ -26,7 +26,7 @@ class Machine {
     std::vector<SnackItem> machine;
 public:
     Machine();
-    void stockMachine();
+    void stockWithSnack();
     SnackItem findItem(std::string item);
 };
 #endif /* Header_h */
