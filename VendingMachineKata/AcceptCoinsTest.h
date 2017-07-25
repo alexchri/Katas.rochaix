@@ -99,7 +99,7 @@ public:
         
         assert(0.04 == readCoins.rejectedCoins());
     }
-/*
+
     void WhenOneDollarInsertedAndCandySelectedThenMakeChangeForThirtyFiveCents() {
         ReadInsertedCoins readCoins;
         
@@ -116,7 +116,7 @@ public:
         assert(0.35 == readCoins.rejectedCoins());
         assert("INSERT COIN" == readCoins.printDisplay());
     }
-*/
+
 };
 
 #endif /* AcceptCoins_hpp */
