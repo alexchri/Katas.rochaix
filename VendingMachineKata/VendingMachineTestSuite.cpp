@@ -38,6 +38,9 @@ int main() {
     
     //MAKE CHANGE
     acceptCoins.WhenOneDollarInsertedAndCandySelectedThenMakeChangeForThirtyFiveCents();
+    acceptCoins.WhenOneDollarInsertedAndColaSelectedThenMakeChangeFor0Cents();
+    acceptCoins.WhenOneDollarAndPennyInsertedAndChipsSelectedThenMakeChangeForFiftyOneCents();
+    acceptCoins.WhenNoMoneyIsInsertedAndColaSelectedThenMakeChangeFor0Cents();
     
     //RETURN COINS
     

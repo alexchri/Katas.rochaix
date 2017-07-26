@@ -116,6 +116,54 @@ public:
         assert(0.35 == readCoins.rejectedCoins());
         assert("INSERT COIN" == readCoins.printDisplay());
     }
+    
+    void WhenOneDollarInsertedAndColaSelectedThenMakeChangeFor0Cents() {
+        ReadInsertedCoins readCoins;
+        readCoins.stockWithCoin();
+        //insert 1 dollar
+        readCoins.insertCoin("Quarter");
+        readCoins.insertCoin("Quarter");
+        readCoins.insertCoin("Quarter");
+        readCoins.insertCoin("Quarter");
+        
+        //select Candy
+        readCoins.transaction(1);
+        
+        //check change made
+        assert(0 == readCoins.rejectedCoins());
+        assert("INSERT COIN" == readCoins.printDisplay());
+    }
+    
+    void WhenOneDollarAndPennyInsertedAndChipsSelectedThenMakeChangeForFiftyOneCents() {
+        ReadInsertedCoins readCoins;
+        readCoins.stockWithCoin();
+        //insert 1 dollar
+        readCoins.insertCoin("Quarter");
+        readCoins.insertCoin("Quarter");
+        readCoins.insertCoin("Quarter");
+        readCoins.insertCoin("Quarter");
+        readCoins.insertCoin("Penny");
+        
+        //select Candy
+        readCoins.transaction(0.5);
+        
+        //check change made
+        assert(0.51 == readCoins.rejectedCoins());
+        assert("INVALID COIN" == readCoins.printDisplay());
+    }
+    
+    void WhenNoMoneyIsInsertedAndColaSelectedThenMakeChangeFor0Cents() {
+        ReadInsertedCoins readCoins;
+        readCoins.stockWithCoin();
+        //insert 0 dollar
+        
+        //select Candy
+        readCoins.transaction(1);
+        
+        //check change made
+        assert(0 == readCoins.rejectedCoins());
+        assert("INSERT COIN" == readCoins.printDisplay());
+    }
 
 };
 

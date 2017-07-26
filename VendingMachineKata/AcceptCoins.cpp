@@ -76,16 +76,19 @@ void CoinCounter::makeChangeFor(double amount) {
     size_t Q = changeAvailable.numQuarters;
     for(; (Q > 0) && (total - 25 >= 0);--Q) {
         ++coinReturn.numQuarters;
+        --changeAvailable.numQuarters;
         total -= 25;
     }
     size_t D = changeAvailable.numDimes;
     for(; (D > 0) && (total - 10 >= 0);--D) {
         ++coinReturn.numDimes;
+        --changeAvailable.numDimes;
         total -= 10;
     }
     size_t N = changeAvailable.numNickels;
     for(; (N > 0) && (amount - 10 >= 0);--N) {
         ++coinReturn.numNickels;
+        --changeAvailable.numNickels;
         total = 5;
     }
 }
