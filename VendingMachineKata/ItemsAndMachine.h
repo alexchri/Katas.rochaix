@@ -21,6 +21,8 @@ public:
     SnackItem(std::string snack, double cost, size_t count);
     double getPrice();
     std::string getName();
+    size_t getNum();
+    void dispense();
 };
 
 class Machine {
@@ -29,6 +31,7 @@ public:
     Machine();
     void stockWithSnack();
     SnackItem findItem(std::string item);
-    int dispenseItemAndReturnNumLeft(std::string item);
+    size_t ReturnNumLeft(std::string item);
+    void dispenseItem(std::string item);
 };
 #endif /* Header_h */

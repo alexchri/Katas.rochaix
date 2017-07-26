@@ -36,7 +36,7 @@ void Driver::select(std::string item) {
 }
 
 void Driver::coinReturn() {
-    //for later functionality
+    coinSlot.returnCoins();
 }
 
 std::string Driver::checkDisplay() {

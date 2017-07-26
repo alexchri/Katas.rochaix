@@ -85,7 +85,8 @@ public:
     void WhenSelectItemForColaThenDispenseOneCola() {
         Machine machine;
         machine.stockWithSnack();
-        assert(4 == machine.dispenseItemAndReturnNumLeft("Cola"));
+        machine.dispenseItem("Cola");
+        assert(4 == machine.ReturnNumLeft("Cola"));
     }
 
 };

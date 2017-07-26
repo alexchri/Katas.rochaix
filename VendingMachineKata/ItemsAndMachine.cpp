@@ -27,6 +27,14 @@ std::string SnackItem::getName() {
     return name;
 }
 
+size_t SnackItem::getNum() {
+    return num;
+}
+
+void SnackItem::dispense() {
+    --num;
+}
+
 Machine::Machine() {
     //define machine[0] as error item
     machine.emplace_back(SnackItem("ERROR", 0, 0));
@@ -48,7 +56,17 @@ SnackItem Machine::findItem(std::string item) {
     return machine[0];
 }
 
-int Machine::dispenseItemAndReturnNumLeft(std::string item) {
+void Machine::dispenseItem(std::string item) {
+    int at = 0;
+    for(int i = 0; i < machine.size(); ++i) {
+        if(machine[i].getName() == item)
+            at = i;
+    }
+    if(machine[at].getNum() != 0)
+        machine[at].dispense();
+}
+
+size_t Machine::ReturnNumLeft(std::string item) {
     //implementation later!
-    return 0;
+    return findItem(item).getNum();
 }
