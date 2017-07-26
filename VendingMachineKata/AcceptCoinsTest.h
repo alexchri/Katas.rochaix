@@ -182,6 +182,24 @@ public:
         assert(0 == readCoins.readTotal());
         assert(0.90 == readCoins.rejectedCoins());
     }
+    
+    void WhenHitReturnCoinAfterInsertingDollarAndPennyThenDisplaysInsertCoin() {
+        ReadInsertedCoins readCoins;
+        
+        //insert 1.01 dollars
+        readCoins.insertCoin("Quarter");
+        readCoins.insertCoin("Quarter");
+        readCoins.insertCoin("Quarter");
+        readCoins.insertCoin("Quarter");
+        readCoins.insertCoin("Penny");
+        
+        //return
+        readCoins.returnCoins();
+        
+        //check change made
+        assert(1.01 == readCoins.rejectedCoins());
+        assert("INSERT COIN" == readCoins.printDisplay());
+    }
 
 };
 

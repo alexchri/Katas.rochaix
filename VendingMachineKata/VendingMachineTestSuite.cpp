@@ -44,7 +44,7 @@ int main() {
     
     //RETURN COINS
     acceptCoins.WhenHitReturnCoinThenCoinSlotIsEmptyAndCoinReturnIsFull();
-    
+    acceptCoins.WhenHitReturnCoinAfterInsertingDollarAndPennyThenDisplaysInsertCoin();
     //SOLD OUT
     
     
