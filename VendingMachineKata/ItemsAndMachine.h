@@ -31,7 +31,7 @@ public:
     Machine();
     void stockWithSnack();
     SnackItem findItem(std::string item);
-    size_t ReturnNumLeft(std::string item);
+    size_t returnNumLeft(std::string item);
     void dispenseItem(std::string item);
 };
 #endif /* Header_h */

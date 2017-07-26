@@ -66,7 +66,7 @@ void Machine::dispenseItem(std::string item) {
         machine[at].dispense();
 }
 
-size_t Machine::ReturnNumLeft(std::string item) {
+size_t Machine::returnNumLeft(std::string item) {
     //implementation later!
     return findItem(item).getNum();
 }

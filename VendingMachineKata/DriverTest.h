@@ -86,12 +86,30 @@ public:
         Machine machine;
         machine.stockWithSnack();
         machine.dispenseItem("Cola");
-        assert(4 == machine.ReturnNumLeft("Cola"));
+        assert(4 == machine.returnNumLeft("Cola"));
     }
     
     void WhenDispenseItemForColaAndSoldOutThenDisplaySoldOut() {
         Driver vendingMachine;
+        //dispense 5 colas
+        for(size_t i = 0; i < 4; ++i)
+            vendingMachine.insert("Quarter");
         vendingMachine.select("Cola");
+        for(size_t i = 0; i < 4; ++i)
+            vendingMachine.insert("Quarter");
+        vendingMachine.select("Cola");
+        for(size_t i = 0; i < 4; ++i)
+            vendingMachine.insert("Quarter");
+        vendingMachine.select("Cola");
+        for(size_t i = 0; i < 4; ++i)
+            vendingMachine.insert("Quarter");
+        vendingMachine.select("Cola");
+        for(size_t i = 0; i < 4; ++i)
+            vendingMachine.insert("Quarter");
+        vendingMachine.select("Cola");
+        //now no more colas in machine
+        vendingMachine.select("Cola");
+        //check if display sold out
         assert("SOLD OUT" == vendingMachine.checkDisplay());
     }
 

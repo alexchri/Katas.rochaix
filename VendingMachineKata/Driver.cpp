@@ -24,9 +24,15 @@ void Driver::insert(std::string coin) {
 void Driver::select(std::string item) {
     SnackItem snack = machine.findItem(item);
     
+    if(machine.returnNumLeft(snack.getName()) == 0) {
+        display = "SOLD OUT";
+        return;
+    }
+    
     if(coinSlot.readTotal() >= snack.getPrice()) {
         display = "THANK YOU";
         coinSlot.transaction(snack.getPrice());
+        machine.dispenseItem(snack.getName());
     }
     else {
         std::stringstream read;
