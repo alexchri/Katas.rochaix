@@ -94,7 +94,10 @@ void CoinCounter::makeChangeFor(double amount) {
 }
 
 void CoinCounter::cancelAndReturnCoins() {
-    //implementation later!
+    coinReturn.numQuarters += coinSlot.numQuarters;
+    coinReturn.numDimes += coinSlot.numDimes;
+    coinReturn.numNickels += coinSlot.numNickels;
+    coinSlot.numQuarters = coinSlot.numDimes = coinSlot.numNickels = 0;
 }
 
 ReadInsertedCoins::ReadInsertedCoins() {
@@ -150,7 +153,7 @@ double ReadInsertedCoins::rejectedCoins() {
 }
 
 void ReadInsertedCoins::returnCoins() {
-    //implementation later!
+    machine.cancelAndReturnCoins();
 }
 
 std::string ReadInsertedCoins::printDisplay() {
