@@ -45,8 +45,9 @@ int main() {
     //RETURN COINS
     acceptCoins.WhenHitReturnCoinThenCoinSlotIsEmptyAndCoinReturnIsFull();
     acceptCoins.WhenHitReturnCoinAfterInsertingDollarAndPennyThenDisplaysInsertCoin();
-    //SOLD OUT
     
+    //SOLD OUT
+    driver.WhenSelectItemForColaThenDispenseOneCola();
     
     //EXACT CHANGE
     

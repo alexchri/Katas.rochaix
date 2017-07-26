@@ -11,9 +11,11 @@
 SnackItem::SnackItem() {
     name = "";
     price = 0;
+    num = 0;
 }
 
-SnackItem::SnackItem(std::string snack, double cost) : name(snack), price(cost) {
+SnackItem::SnackItem(std::string snack, double cost, size_t count)
+    : name(snack), price(cost), num(count) {
     //just a constructor
 }
 
@@ -27,14 +29,14 @@ std::string SnackItem::getName() {
 
 Machine::Machine() {
     //define machine[0] as error item
-    machine.emplace_back(SnackItem("ERROR", 0));
+    machine.emplace_back(SnackItem("ERROR", 0, 0));
 }
 
 void Machine::stockWithSnack() {
     //insert items list here!
-    machine.emplace_back(SnackItem("Cola", 1));
-    machine.emplace_back(SnackItem("Chips", 0.5));
-    machine.emplace_back(SnackItem("Candy", 0.65));
+    machine.emplace_back(SnackItem("Cola", 1 , 5));
+    machine.emplace_back(SnackItem("Chips", 0.5 , 5));
+    machine.emplace_back(SnackItem("Candy", 0.65, 5));
 }
 
 SnackItem Machine::findItem(std::string item) {
@@ -44,4 +46,9 @@ SnackItem Machine::findItem(std::string item) {
     }
     //define machine[0] as error item
     return machine[0];
+}
+
+int Machine::dispenseItemAndReturnNumLeft(std::string item) {
+    //implementation later!
+    return 0;
 }

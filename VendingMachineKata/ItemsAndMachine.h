@@ -15,9 +15,10 @@
 class SnackItem {
     std::string name;
     double price;
+    size_t num;
 public:
     SnackItem();
-    SnackItem(std::string snack, double cost);
+    SnackItem(std::string snack, double cost, size_t count);
     double getPrice();
     std::string getName();
 };
@@ -28,5 +29,6 @@ public:
     Machine();
     void stockWithSnack();
     SnackItem findItem(std::string item);
+    int dispenseItemAndReturnNumLeft(std::string item);
 };
 #endif /* Header_h */

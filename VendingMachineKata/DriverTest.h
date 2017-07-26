@@ -81,6 +81,12 @@ public:
         assert("THANK YOU" == vendingMachine.checkDisplay());
         assert("INSERT COIN" == vendingMachine.checkDisplay());
     }
+    
+    void WhenSelectItemForColaThenDispenseOneCola() {
+        Machine machine;
+        machine.stockWithSnack();
+        assert(4 == machine.dispenseItemAndReturnNumLeft("Cola"));
+    }
 
 };
 
