@@ -102,7 +102,7 @@ public:
 
     void WhenOneDollarInsertedAndCandySelectedThenMakeChangeForThirtyFiveCents() {
         ReadInsertedCoins readCoins;
-        
+        readCoins.stockWithCoin();
         //insert 1 dollar
         readCoins.insertCoin("Quarter");
         readCoins.insertCoin("Quarter");

@@ -6,6 +6,8 @@
 //
 //
 
+#include <cmath>
+
 #include "AcceptCoins.h"
 
 CoinCounter::CoinCounter() {
@@ -68,7 +70,24 @@ void CoinCounter::acceptCoins() {
 
 void CoinCounter::makeChangeFor(double amount) {
     //make change for <amount>
-
+    //converted to integer comparison for ease
+    int total = int(ceil(100 * amount));
+    
+    size_t Q = changeAvailable.numQuarters;
+    for(; (Q > 0) && (total - 25 >= 0);--Q) {
+        ++coinReturn.numQuarters;
+        total -= 25;
+    }
+    size_t D = changeAvailable.numDimes;
+    for(; (D > 0) && (total - 10 >= 0);--D) {
+        ++coinReturn.numDimes;
+        total -= 10;
+    }
+    size_t N = changeAvailable.numNickels;
+    for(; (N > 0) && (amount - 10 >= 0);--N) {
+        ++coinReturn.numNickels;
+        total = 5;
+    }
 }
 
 ReadInsertedCoins::ReadInsertedCoins() {
@@ -106,10 +125,10 @@ void ReadInsertedCoins::insertCoin(std::string coins) {
 }
 
 void ReadInsertedCoins::transaction(double price) {
-    //double changeToMake = machine.getRunningTotal() - price;
+    double changeToMake = machine.getRunningTotal() - price;
     //machine swallows coins
     machine.acceptCoins();
-    
+    machine.makeChangeFor(changeToMake);
 }
 
 double ReadInsertedCoins::readTotal() {
