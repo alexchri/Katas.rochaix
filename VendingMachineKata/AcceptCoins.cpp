@@ -154,6 +154,9 @@ double ReadInsertedCoins::rejectedCoins() {
 
 void ReadInsertedCoins::returnCoins() {
     machine.cancelAndReturnCoins();
+    display.str("");
+    display.clear();
+    display << "INSERT COIN";
 }
 
 std::string ReadInsertedCoins::printDisplay() {
