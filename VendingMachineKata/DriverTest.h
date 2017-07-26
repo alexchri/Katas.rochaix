@@ -88,6 +88,12 @@ public:
         machine.dispenseItem("Cola");
         assert(4 == machine.ReturnNumLeft("Cola"));
     }
+    
+    void WhenDispenseItemForColaAndSoldOutThenDisplaySoldOut() {
+        Driver vendingMachine;
+        vendingMachine.select("Cola");
+        assert("SOLD OUT" == vendingMachine.checkDisplay());
+    }
 
 };
 

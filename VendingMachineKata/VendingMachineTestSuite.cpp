@@ -48,6 +48,7 @@ int main() {
     
     //SOLD OUT
     driver.WhenSelectItemForColaThenDispenseOneCola();
+    driver.WhenDispenseItemForColaAndSoldOutThenDisplaySoldOut();
     
     //EXACT CHANGE
     
