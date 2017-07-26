@@ -51,7 +51,7 @@ int main() {
     driver.WhenDispenseItemForColaAndSoldOutThenDisplaySoldOut();
     
     //EXACT CHANGE
-    
+    acceptCoins.WhenNotEnoughChangeInMachineFromSeventyCentsForChipsThenDisplayExactChangeOnly();
     
     return 0;
 }

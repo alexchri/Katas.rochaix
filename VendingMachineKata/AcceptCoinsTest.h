@@ -201,8 +201,20 @@ public:
         assert("INSERT COIN" == readCoins.printDisplay());
     }
     
-    void WhenNotEnoughChangeInMachineFromOneDollarForChipsThenDisplayExactChangeOnly() {
-        //implement after refactor!
+    void WhenNotEnoughChangeInMachineFromSeventyCentsForChipsThenDisplayExactChangeOnly() {
+        ReadInsertedCoins readCoins;
+        //insert 0.70 dollars with 2 quarters and 2 dimes
+        //try to make change for chips which is 65 cents - no nickels in machine
+        readCoins.insertCoin("Quarter");
+        readCoins.insertCoin("Quarter");
+        readCoins.insertCoin("Dime");
+        readCoins.insertCoin("Dime");
+        //select Chips
+        readCoins.transaction(0.65);
+        //check display, coinslot is still full, coinReturn not filled
+        assert("EXACT CHANGE ONLY" == readCoins.printDisplay());
+        assert(0.70 == readCoins.readTotal());
+        assert(0 == readCoins.rejectedCoins());
     }
 
 };
