@@ -44,6 +44,7 @@ public:
     void insertPenny();
     void acceptCoins();
     void makeChangeFor(double amount);
+    void cancelAndReturnCoins();
 };
 
 class ReadInsertedCoins {
@@ -56,6 +57,7 @@ public:
     void stockWithCoin();
     void insertCoin(std::string coins);
     void transaction(double price);
+    void returnCoins();
     
     //getter
     std::string printDisplay();

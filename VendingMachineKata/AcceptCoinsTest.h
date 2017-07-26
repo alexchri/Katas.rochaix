@@ -152,7 +152,7 @@ public:
         assert("INVALID COIN" == readCoins.printDisplay());
     }
     
-    void WhenNoMoneyIsInsertedAndColaSelectedThenMakeChangeFor0Cents() {
+    void WhenNoMoneyIsInsertedAndColaSelectedThenMakeChangeForZeroCents() {
         ReadInsertedCoins readCoins;
         readCoins.stockWithCoin();
         //insert 0 dollar
@@ -163,6 +163,24 @@ public:
         //check change made
         assert(0 == readCoins.rejectedCoins());
         assert("INSERT COIN" == readCoins.printDisplay());
+    }
+    
+    void WhenHitReturnCoinThenCoinSlotIsEmptyAndCoinReturnIsFull() {
+        ReadInsertedCoins readCoins;
+        
+        //insert 90 cents
+        readCoins.insertCoin("Quarter");
+        readCoins.insertCoin("Quarter");
+        readCoins.insertCoin("Quarter");
+        readCoins.insertCoin("Dime");
+        readCoins.insertCoin("Nickel");
+        
+        //return
+        readCoins.returnCoins();
+        
+        //check change made
+        assert(0 == readCoins.readTotal());
+        assert(0.90 == readCoins.rejectedCoins());
     }
 
 };

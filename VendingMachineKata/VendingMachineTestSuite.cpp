@@ -40,10 +40,10 @@ int main() {
     acceptCoins.WhenOneDollarInsertedAndCandySelectedThenMakeChangeForThirtyFiveCents();
     acceptCoins.WhenOneDollarInsertedAndColaSelectedThenMakeChangeFor0Cents();
     acceptCoins.WhenOneDollarAndPennyInsertedAndChipsSelectedThenMakeChangeForFiftyOneCents();
-    acceptCoins.WhenNoMoneyIsInsertedAndColaSelectedThenMakeChangeFor0Cents();
+    acceptCoins.WhenNoMoneyIsInsertedAndColaSelectedThenMakeChangeForZeroCents();
     
     //RETURN COINS
-    
+    acceptCoins.WhenHitReturnCoinThenCoinSlotIsEmptyAndCoinReturnIsFull();
     
     //SOLD OUT
     

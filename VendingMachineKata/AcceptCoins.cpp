@@ -93,6 +93,10 @@ void CoinCounter::makeChangeFor(double amount) {
     }
 }
 
+void CoinCounter::cancelAndReturnCoins() {
+    //implementation later!
+}
+
 ReadInsertedCoins::ReadInsertedCoins() {
     display << std::fixed << std::setprecision(2);
     display << "INSERT COIN";
@@ -143,6 +147,10 @@ double ReadInsertedCoins::readTotal() {
 double ReadInsertedCoins::rejectedCoins() {
     int roundToCent = (int)(100 * machine.getChangeMade());
     return (double)roundToCent/100;
+}
+
+void ReadInsertedCoins::returnCoins() {
+    //implementation later!
 }
 
 std::string ReadInsertedCoins::printDisplay() {
