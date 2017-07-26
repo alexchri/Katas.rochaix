@@ -106,7 +106,7 @@ ReadInsertedCoins::ReadInsertedCoins() {
     CoinCounter();
 }
 
-void ReadInsertedCoins::stockWithCoin() {
+void ReadInsertedCoins::stockWithCoin(int num) {
     machine.stockWithChange(5);
 }
 

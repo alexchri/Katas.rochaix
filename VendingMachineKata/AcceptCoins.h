@@ -54,7 +54,7 @@ public:
     ReadInsertedCoins();
     
     //setter
-    void stockWithCoin();
+    void stockWithCoin(int num);
     void insertCoin(std::string coins);
     void transaction(double price);
     void returnCoins();

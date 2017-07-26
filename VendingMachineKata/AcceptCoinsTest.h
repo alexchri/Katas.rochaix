@@ -102,7 +102,7 @@ public:
 
     void WhenOneDollarInsertedAndCandySelectedThenMakeChangeForThirtyFiveCents() {
         ReadInsertedCoins readCoins;
-        readCoins.stockWithCoin();
+        readCoins.stockWithCoin(5);
         //insert 1 dollar
         readCoins.insertCoin("Quarter");
         readCoins.insertCoin("Quarter");
@@ -119,7 +119,7 @@ public:
     
     void WhenOneDollarInsertedAndColaSelectedThenMakeChangeFor0Cents() {
         ReadInsertedCoins readCoins;
-        readCoins.stockWithCoin();
+        readCoins.stockWithCoin(5);
         //insert 1 dollar
         readCoins.insertCoin("Quarter");
         readCoins.insertCoin("Quarter");
@@ -136,7 +136,7 @@ public:
     
     void WhenOneDollarAndPennyInsertedAndChipsSelectedThenMakeChangeForFiftyOneCents() {
         ReadInsertedCoins readCoins;
-        readCoins.stockWithCoin();
+        readCoins.stockWithCoin(5);
         //insert 1 dollar
         readCoins.insertCoin("Quarter");
         readCoins.insertCoin("Quarter");
@@ -154,7 +154,7 @@ public:
     
     void WhenNoMoneyIsInsertedAndColaSelectedThenMakeChangeForZeroCents() {
         ReadInsertedCoins readCoins;
-        readCoins.stockWithCoin();
+        readCoins.stockWithCoin(5);
         //insert 0 dollar
         
         //select Candy
@@ -199,6 +199,10 @@ public:
         //check change made
         assert(1.01 == readCoins.rejectedCoins());
         assert("INSERT COIN" == readCoins.printDisplay());
+    }
+    
+    void WhenNotEnoughChangeInMachineFromOneDollarForChipsThenDisplayExactChangeOnly() {
+        //implement after refactor!
     }
 
 };
